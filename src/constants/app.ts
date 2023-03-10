@@ -1,0 +1,4 @@
+export const KEY_STORE_USE_FINGERPRINT = 'USE_FINGERPRINT';
+export const DEFAULT_TOTP_DIGITS = 6;
+export const DEFAULT_TOTP_PERIOD = 30;
+export const DEFAULT_TOTP_ALGORITHM = 'SHA-1';

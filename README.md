@@ -1,42 +1,43 @@
-# React Native School TypeScript Expo Template
+# TimePass
 
-A simple Expo template with the following features:
+An open source TOTP (Time-based One Time Password)
 
-- All TypeScript
-- Eslint & Prettier configured
-- React Navigation v6
-- Testing Configured
-- Simple project structure
-- Small component library to get started with
+![](./docs/logo.png)
 
-It's easy to create a project, strip out the few components included, and still have the architecture in place to quickly start building an app.
+## What is TOTP
 
-## Usage
+It is a security protocol used to generate a unique password that changes every certain amount of time (usually 30 or 60 seconds) and can only be used once. TOTP is commonly used in two-factor authentication (2FA) systems, where users are required to provide a password along with a TOTP code to verify their identity. The TOTP code is generated using a shared secret key and the current time, ensuring that the code is valid only for a short period of time and cannot be reused by an attacker.
 
-> Be sure to have the [Expo CLI](https://docs.expo.io/workflow/expo-cli/) installed.
+**TimePass** is an open-source project that aims to provide an alternative to commercial two-factor authentication (2FA) apps like Google Authenticator or Authy. It uses the TOTP protocol to generate one-time passwords, just like these apps do. However, because it is open source, users can review the code and ensure that there are no hidden backdoors or vulnerabilities that could be exploited by attackers. TimePass is free to use and can be installed on Android mobile devices.
 
-```bash
-expo init --template @react-native-school/expo-typescript-template
+![](./docs/app.png)
+
+## Developers
+
+Join TimePass, the open-source alternative to Google Authenticator and Authy. Help us create a more secure future for online authentication. Contribute code, report bugs, or just spread the word. Let's make online security accessible for everyone!
+
+### Tech stack
+
+Timepass is a mobile application built on the React Native framework, utilizing the Expo development environment, TypeScript for improved type safety and scalability, LinguiJS for internationalization, and WatermelonDB for efficient data management.
+
+### Installation
+
+Clone this project and execute:
+
+```
+npm i
 ```
 
-- Run on iOS: `yarn ios` or `npm run ios`
-- Run on Android: `yarn android` or `npm run android`
-- Run on Web: `yarn web` or `npm run web`
-- Compile TypeScript: `yarn tsc`
-- Run Tests: `yarn test` or `npm run test`
-- Lint Code: `yarn lint` or `npm run lint`
-- Format Code: `yarn format` or `npm run format`
+### Usage
 
-## Screenshots
+Connect your device to the USB port and run:
 
-List Screen
-![List Screen](./assets/screenshots/list.png)
+```
+npm run android
+```
 
-Text Screen
-![Text Screen](./assets/screenshots/text.png)
+or
 
-Form Screen
-![Form Screen](./assets/screenshots/form.png)
-
-Button Screen
-![Button Screen](./assets/screenshots/button.png)
+```
+npx expo run:android
+```
