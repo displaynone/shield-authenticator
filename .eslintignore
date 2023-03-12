@@ -5,3 +5,4 @@ assets/*
 .husky/*
 android/*
 assets/*
+commitlint.config.js
