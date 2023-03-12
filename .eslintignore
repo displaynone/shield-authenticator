@@ -1,0 +1,7 @@
+node_modules/*
+docs/*
+assets/*
+.expo/*
+.husky/*
+android/*
+assets/*
