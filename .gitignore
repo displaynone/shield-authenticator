@@ -73,4 +73,6 @@ dist/
 android/
 ./.expo-shared
 
+.env
+
 # @end expo-cli

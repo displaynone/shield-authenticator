@@ -1,6 +1,6 @@
 # TimePass
 
-An open source TOTP (Time-based One Time Password)
+An open source TOTP (Time-based One Time Password) Android app.
 
 ![](./docs/logo.png)
 
