@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.1](https://github.com/displaynone/timepass/compare/v1.0.0...v1.0.1) (2023-03-16)
+
+
+### Bug Fixes
+
+* eas-cli package ([5e43096](https://github.com/displaynone/timepass/commit/5e430961aae0aff64a1965814bb48eaa889e8529))
+* github actions ([6a8c0fe](https://github.com/displaynone/timepass/commit/6a8c0fe128bb7329b33f15124c80423e5125791c))
+
 ## 1.0.0 (2023-03-13)
 
 
