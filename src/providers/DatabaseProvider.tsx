@@ -28,23 +28,32 @@ export interface DBContextInterface {
   listSites: () => Promise<Site[]>;
 }
 
+const updateSiteData = (site: Site, otpData: OtpRecord) => {
+  site.label = otpData.label;
+  site.secret = otpData.secret;
+  site.algorithm = otpData.algorithm;
+  site.digits = otpData.digits;
+  site.issuer = otpData.issuer;
+  site.type = otpData.type;
+  site.period = otpData.period;
+};
+
 const newSite = (otpData: OtpRecord) =>
   db.write(async () => {
     const existing = await db.collections
       .get<Site>(SITE_TABLE_NAME)
       .query(Q.where('label', otpData.label))
       .fetch();
-    if (existing.length) return existing[0];
+    if (existing.length) {
+      const updateSite = await existing[0].update(site =>
+        updateSiteData(site, otpData),
+      );
+      return updateSite;
+    }
 
-    const site = await db.get<Site>(SITE_TABLE_NAME).create(site => {
-      site.label = otpData.label;
-      site.secret = otpData.secret;
-      site.algorithm = otpData.algorithm;
-      site.digits = otpData.digits;
-      site.issuer = otpData.issuer;
-      site.type = otpData.type;
-      site.period = otpData.period;
-    });
+    const site = await db
+      .get<Site>(SITE_TABLE_NAME)
+      .create(site => updateSiteData(site, otpData));
     return site;
   });
 
