@@ -4,6 +4,7 @@ import { useRouter } from 'expo-router';
 import React, { FC, useEffect, useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { parseOtpUri } from '../../src/util/parseOtpUri';
+import { Trans } from '@lingui/macro';
 
 const QRScanner: FC = () => {
   const [hasPermission, setHasPermission] = useState<boolean>();
@@ -25,10 +26,18 @@ const QRScanner: FC = () => {
   };
 
   if (hasPermission === null) {
-    return <Text>Requesting for camera permission</Text>;
+    return (
+      <Text>
+        <Trans>Requesting for camera permission</Trans>
+      </Text>
+    );
   }
   if (hasPermission === false) {
-    return <Text>No access to camera</Text>;
+    return (
+      <Text>
+        <Trans>No access to camera</Trans>
+      </Text>
+    );
   }
 
   return (
