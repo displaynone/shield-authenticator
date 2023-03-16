@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.1.0](https://github.com/displaynone/timepass/compare/v1.0.1...v1.1.0) (2023-03-16)
+
+
+### Features
+
+* added apk in the repo ([c4425e8](https://github.com/displaynone/timepass/commit/c4425e8d5dd27d8ca2bbd1086b160a21fecaf0c6))
+
+
+### Bug Fixes
+
+* eas build locally ([c4425e8](https://github.com/displaynone/timepass/commit/c4425e8d5dd27d8ca2bbd1086b160a21fecaf0c6))
+
 ## [1.0.1](https://github.com/displaynone/timepass/compare/v1.0.0...v1.0.1) (2023-03-16)
 
 
