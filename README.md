@@ -41,3 +41,9 @@ or
 ```
 npx expo run:android
 ```
+
+#### Test Github Actions
+
+```
+act --secret-file .env --env-file .env -j preview
+```
