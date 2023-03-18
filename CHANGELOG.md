@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/displaynone/timepass/compare/v1.2.0...v1.3.0) (2023-03-18)
+
+
+### Features
+
+* new apk ([49071bf](https://github.com/displaynone/timepass/commit/49071bf8f28a7347986d2eb1ba00b1399d81bb2d))
+
 ## [1.2.0](https://github.com/displaynone/timepass/compare/v1.1.0...v1.2.0) (2023-03-18)
 
 
