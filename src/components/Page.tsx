@@ -17,6 +17,7 @@ import { ComponentWithChildren } from '../types';
 import Container from '../ui/Container';
 
 import * as SplashScreen from 'expo-splash-screen';
+import NotificationProvider from '../providers/NotificationProvider';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -81,10 +82,12 @@ const Page: FC<ComponentWithChildren> = ({ children }) => {
         <PaperProvider theme={theme}>
           <LocalizationProvider>
             <SafeAreaProvider>
-              <FingerprintAuthProvider>
-                <StatusBar style="auto" />
-                {children}
-              </FingerprintAuthProvider>
+              <NotificationProvider>
+                <FingerprintAuthProvider>
+                  <StatusBar style="auto" />
+                  {children}
+                </FingerprintAuthProvider>
+              </NotificationProvider>
             </SafeAreaProvider>
           </LocalizationProvider>
         </PaperProvider>

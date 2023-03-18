@@ -14,6 +14,7 @@ import SiteToken from '../../src/ui/SiteToken';
 import { generateTOTP, getAlgorithm } from '../../src/util/generateTotp';
 import { Button } from 'react-native-paper';
 import { Trans } from '@lingui/macro';
+import CopyToClipboard from '../../src/components/CopyToClipboard';
 
 const QRInfo: FC = () => {
   const params = useSearchParams() as unknown as OtpRecord;
@@ -33,6 +34,13 @@ const QRInfo: FC = () => {
     return <ActivityIndicator />;
   }
 
+  const token = generateTOTP({
+    algorithm: getAlgorithm(site.algorithm),
+    digits: site.digits,
+    period,
+    secret: site.secret,
+  });
+
   return (
     <Container variant={['fullscreen', 'filled']}>
       <View style={styles.icon}>
@@ -47,16 +55,10 @@ const QRInfo: FC = () => {
         <Text variant={['secondary', 'bold']} size="bodyLarge">
           {site.label}
         </Text>
-        <SiteToken
-          value={generateTOTP({
-            algorithm: getAlgorithm(site.algorithm),
-            digits: site.digits,
-            period,
-            secret: site.secret,
-          })}
-          variant="tertiary"
-          size="displayMedium"
-        />
+        <View style={styles.token}>
+          <SiteToken value={token} variant="tertiary" size="displayMedium" />
+          <CopyToClipboard text={token} />
+        </View>
       </View>
       <Button
         mode="elevated"
@@ -76,6 +78,10 @@ const styles = StyleSheet.create({
     marginVertical: 32,
   },
   icon: {
+    alignItems: 'center',
+  },
+  token: {
+    flexDirection: 'row',
     alignItems: 'center',
   },
 });
