@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0](https://github.com/displaynone/timepass/compare/v1.3.0...v1.4.0) (2023-03-18)
+
+
+### Features
+
+* added copy to clipboard ([9f49914](https://github.com/displaynone/timepass/commit/9f49914e240bc191a4bdd0bba78503d1cedf4bee))
+
 ## [1.3.0](https://github.com/displaynone/timepass/compare/v1.2.0...v1.3.0) (2023-03-18)
 
 
