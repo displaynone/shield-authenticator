@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.2.0](https://github.com/displaynone/timepass/compare/v1.1.0...v1.2.0) (2023-03-18)
+
+
+### Features
+
+* new design for scanning process ([e675910](https://github.com/displaynone/timepass/commit/e67591055cb303126a0ad4fd8b0f1660e81128ec))
+
+
+### Bug Fixes
+
+* update site when scanning the qr code again ([2eb25ab](https://github.com/displaynone/timepass/commit/2eb25ab1bcbebd05ca58d42c5aceede5678f65b9))
+* update site when scanning the qr code again ([5b3e5c4](https://github.com/displaynone/timepass/commit/5b3e5c44f0ac85707bc75eb9783492e47c49b454))
+
 ## [1.1.0](https://github.com/displaynone/timepass/compare/v1.0.1...v1.1.0) (2023-03-16)
 
 
