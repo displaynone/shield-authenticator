@@ -24,3 +24,7 @@ export type ComponentWithSize = {
   width?: number;
   height?: number;
 };
+
+export type ComponentWithColor = {
+  color?: string;
+};

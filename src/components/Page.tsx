@@ -45,11 +45,12 @@ const theme: MD3Theme = {
   ...DefaultTheme,
   colors: {
     ...DefaultTheme.colors,
-    primary: colors.dark,
+    primary: colors.primary,
     background: colors.primary,
     primaryContainer: colors.primary,
     onPrimaryContainer: colors.light,
     secondary: colors.medium,
+    tertiary: colors.light,
   },
   roundness: 8,
   fonts: configureFonts({
@@ -82,7 +83,7 @@ const Page: FC<ComponentWithChildren> = ({ children }) => {
             <SafeAreaProvider>
               <FingerprintAuthProvider>
                 <StatusBar style="auto" />
-                <Container>{children}</Container>
+                {children}
               </FingerprintAuthProvider>
             </SafeAreaProvider>
           </LocalizationProvider>

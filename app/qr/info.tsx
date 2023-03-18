@@ -1,16 +1,29 @@
 import { useRouter, useSearchParams } from 'expo-router';
 import React, { FC, useEffect, useState } from 'react';
-import { ActivityIndicator, Button, StyleSheet, View } from 'react-native';
-import { Text } from 'react-native-paper';
+import { ActivityIndicator, StyleSheet, View } from 'react-native';
 import Site from '../../src/models/Site';
 import { useDB } from '../../src/providers/DatabaseProvider';
 import { OtpRecord } from '../../src/types';
+import Container from '../../src/ui/Container';
+import Text from '../../src/ui/Text';
+import IssuerIcon from '../../src/ui/IssuerIcon';
+import colors from '../../src/constants/colors';
+import { useTimer } from '../../src/hooks/useTimer';
+import { DEFAULT_TOTP_PERIOD } from '../../src/constants/app';
+import SiteToken from '../../src/ui/SiteToken';
+import { generateTOTP, getAlgorithm } from '../../src/util/generateTotp';
+import { Button } from 'react-native-paper';
+import { Trans } from '@lingui/macro';
 
 const QRInfo: FC = () => {
   const params = useSearchParams() as unknown as OtpRecord;
   const { push } = useRouter();
   const { newSite } = useDB();
   const [site, setSite] = useState<Site>();
+
+  const period = site?.period || DEFAULT_TOTP_PERIOD;
+  const timer = useTimer(period, 150);
+  const progress = (100 * timer) / period;
 
   useEffect(() => {
     newSite(params).then(s => setSite(s));
@@ -21,29 +34,49 @@ const QRInfo: FC = () => {
   }
 
   return (
-    <View style={styles.container}>
-      <Text>Label: {site.label}</Text>
-      <Text>Secret: {site.secret}</Text>
-      <Text>Algorithm: {site.algorithm}</Text>
-      <Text>Digits: {site.digits}</Text>
-      <Text>Issuer: {site.issuer}</Text>
-      <Text>Type: {site.type}</Text>
-      <Text>Period: {site.period}</Text>
+    <Container variant={['fullscreen', 'filled']}>
+      <View style={styles.icon}>
+        <IssuerIcon
+          size={124}
+          color={colors.white}
+          issuer={site.issuer}
+          progress={progress}
+        />
+      </View>
+      <View style={styles.container}>
+        <Text variant={['secondary', 'bold']} size="bodyLarge">
+          {site.label}
+        </Text>
+        <SiteToken
+          value={generateTOTP({
+            algorithm: getAlgorithm(site.algorithm),
+            digits: site.digits,
+            period,
+            secret: site.secret,
+          })}
+          variant="tertiary"
+          size="displayMedium"
+        />
+      </View>
       <Button
-        title={'Tap to Scan Again'}
+        mode="elevated"
         onPress={() => {
           push('/qr');
         }}
-      />
-    </View>
+      >
+        <Trans>Scan another code</Trans>
+      </Button>
+    </Container>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    padding: 0,
-    margin: 0,
+    alignItems: 'center',
+    marginVertical: 32,
+  },
+  icon: {
+    alignItems: 'center',
   },
 });
 
