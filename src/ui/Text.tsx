@@ -33,7 +33,11 @@ const Text: FC<ComponentWithChildren & TextProps> = ({
   const listOfStiles = [variant].flat().map(style => styles[style]);
 
   return (
-    <PaperText style={[styles.common, listOfStiles]} variant={size}>
+    <PaperText
+      style={[styles.common, listOfStiles]}
+      variant={size}
+      numberOfLines={1}
+    >
       {children}
     </PaperText>
   );
