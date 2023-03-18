@@ -1,20 +1,23 @@
 import { FC } from 'react';
 import { StyleSheet, View } from 'react-native';
-import Text from './Text';
+import Text, { TextProps, TextVariantTypes } from './Text';
 
 type SiteTokenProps = {
   value: string;
+  variant?: 'primary' | 'tertiary';
+  size?: TextProps['size'];
 };
 
-const SiteToken: FC<SiteTokenProps> = ({ value }) => {
+const SiteToken: FC<SiteTokenProps> = ({
+  value,
+  variant = 'primary',
+  size = 'headlineSmall',
+}) => {
   return (
     <View style={styles.container}>
       {value.match(/\d{3}/g)?.map((num, index) => (
         <View style={styles.number} key={index}>
-          <Text
-            size="headlineSmall"
-            variant={['primary', 'marginless', 'bold']}
-          >
+          <Text size={size} variant={[variant, 'marginless', 'bold']}>
             {num}
           </Text>
         </View>

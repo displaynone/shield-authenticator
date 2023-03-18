@@ -11,6 +11,7 @@ type IssuerProps = {
   progress?: number;
   size?: number;
   strokeWidth?: number;
+  color?: string;
 };
 
 const IssuerIcon: FC<IssuerProps> = ({
@@ -18,6 +19,7 @@ const IssuerIcon: FC<IssuerProps> = ({
   progress = 0,
   size = 58,
   strokeWidth = 4,
+  color,
 }) => {
   const styles = getStyles(size);
   const getComponent = () => {
@@ -39,7 +41,7 @@ const IssuerIcon: FC<IssuerProps> = ({
   return (
     <View style={styles.icon}>
       <View style={styles.progress}>
-        <Svg width={size} height={size} fill="pink">
+        <Svg width={size} height={size}>
           <Circle
             stroke={colors.medium}
             fill="none"
@@ -63,7 +65,7 @@ const IssuerIcon: FC<IssuerProps> = ({
           />
         </Svg>
       </View>
-      <Component width={32} />
+      <Component width={size - strokeWidth - 18} color={color} />
     </View>
   );
 };
@@ -73,7 +75,6 @@ const getStyles = (size: number) =>
     icon: {
       alignItems: 'center',
       justifyContent: 'center',
-      backgroundColor: colors.white,
       width: size,
       height: size,
       position: 'relative',

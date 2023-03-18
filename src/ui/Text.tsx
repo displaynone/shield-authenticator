@@ -1,10 +1,11 @@
 import { FC } from 'react';
 import { StyleSheet } from 'react-native';
-import { Text as PaperText, useTheme } from 'react-native-paper';
 import {
   MD3Theme,
   MD3TypescaleKey,
-} from 'react-native-paper/lib/typescript/types';
+  Text as PaperText,
+  useTheme,
+} from 'react-native-paper';
 import { ComponentWithChildren } from '../types';
 
 const variants = [
@@ -14,10 +15,10 @@ const variants = [
   'tertiary',
   'bold',
 ] as const;
-type VariantTypes = (typeof variants)[number];
+export type TextVariantTypes = (typeof variants)[number];
 
-type TextProps = {
-  variant?: VariantTypes | VariantTypes[];
+export type TextProps = {
+  variant?: TextVariantTypes | TextVariantTypes[];
   size?: keyof typeof MD3TypescaleKey;
 };
 

@@ -1,24 +1,39 @@
 import { FC } from 'react';
-import { StyleSheet, View } from 'react-native';
+import {
+  Dimensions,
+  StyleProp,
+  StyleSheet,
+  View,
+  ViewStyle,
+} from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import colors from '../constants/colors';
 import { ComponentWithChildren } from '../types';
 
-const variants = ['regular', 'filled'] as const;
+const variants = ['regular', 'filled', 'fullscreen'] as const;
 type VariantTypes = (typeof variants)[number];
 
 type ContainerProps = {
-  variant?: VariantTypes;
+  variant?: VariantTypes | VariantTypes[];
 };
 
 const Container: FC<ComponentWithChildren & ContainerProps> = ({
   children,
   variant = 'regular',
 }) => {
+  const variants = [variant].flat();
+  const variantStyles: StyleProp<ViewStyle>[] = variants.map(
+    type => styles[type],
+  );
+
+  const Outter = variants.includes('fullscreen') ? View : SafeAreaView;
+  const Inner = variants.includes('fullscreen') ? SafeAreaView : View;
   return (
-    <SafeAreaView style={[styles.area, styles[variant]]}>
-      <View style={styles.container}>{children}</View>
-    </SafeAreaView>
+    <Outter style={[styles.area, ...variantStyles]}>
+      <Inner style={styles.area}>
+        <View style={styles.container}>{children}</View>
+      </Inner>
+    </Outter>
   );
 };
 
@@ -32,10 +47,11 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    padding: 20,
+    padding: 24,
     position: 'relative',
     height: '100%',
   },
+  fullscreen: {},
 });
 
 export default Container;
