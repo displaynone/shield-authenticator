@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.5.0](https://github.com/displaynone/timepass/compare/v1.4.0...v1.5.0) (2023-03-22)
+
+
+### Features
+
+* added new sites that are recognized ([cfb435f](https://github.com/displaynone/timepass/commit/cfb435fe0ddd1bb0bedbebd085e02a812b2e42cf))
+
+
+### Bug Fixes
+
+* scroll view for the list of sites ([cfb435f](https://github.com/displaynone/timepass/commit/cfb435fe0ddd1bb0bedbebd085e02a812b2e42cf))
+* search includes issuer ([cfb435f](https://github.com/displaynone/timepass/commit/cfb435fe0ddd1bb0bedbebd085e02a812b2e42cf))
+
 ## [1.4.0](https://github.com/displaynone/timepass/compare/v1.3.0...v1.4.0) (2023-03-18)
 
 
