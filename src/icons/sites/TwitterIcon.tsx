@@ -1,6 +1,6 @@
-import Svg, { Circle, Path, Rect } from 'react-native-svg';
-import { ComponentWithColor, ComponentWithSize } from '../types';
 import { FC } from 'react';
+import Svg, { Path } from 'react-native-svg';
+import { ComponentWithColor, ComponentWithSize } from '../../types';
 
 export const TwitterIcon: FC<ComponentWithSize & ComponentWithColor> = ({
   width = 48,

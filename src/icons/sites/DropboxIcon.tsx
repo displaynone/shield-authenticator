@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import Svg, { Path } from 'react-native-svg';
-import { ComponentWithColor, ComponentWithSize } from '../types';
+import { ComponentWithColor, ComponentWithSize } from '../../types';
 
 export const DropboxIcon: FC<ComponentWithSize & ComponentWithColor> = ({
   width = 48,

@@ -47,3 +47,7 @@ npx expo run:android
 ```
 act --secret-file .env --env-file .env -j preview
 ```
+
+##### More info
+
+- [List of 2FA sites](https://2fa.directory/)

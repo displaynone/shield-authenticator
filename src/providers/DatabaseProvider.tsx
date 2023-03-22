@@ -42,7 +42,12 @@ const newSite = (otpData: OtpRecord) =>
   db.write(async () => {
     const existing = await db.collections
       .get<Site>(SITE_TABLE_NAME)
-      .query(Q.where('label', otpData.label))
+      .query(
+        Q.and(
+          Q.where('label', otpData.label),
+          Q.where('issuer', otpData.issuer || ''),
+        ),
+      )
       .fetch();
     if (existing.length) {
       const updateSite = await existing[0].update(site =>
