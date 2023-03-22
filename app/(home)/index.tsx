@@ -1,7 +1,7 @@
 import React, { FC, useEffect, useState } from 'react';
 
 import { Trans, t } from '@lingui/macro';
-import { ActivityIndicator, StyleSheet, View } from 'react-native';
+import { ActivityIndicator, ScrollView, StyleSheet, View } from 'react-native';
 import { TextInput } from 'react-native-paper';
 import SiteInfo from '../../src/components/SiteInfo';
 import colors from '../../src/constants/colors';
@@ -29,8 +29,11 @@ const Home: FC = () => {
     if (!search) {
       setFilteredSites(sites);
     } else {
+      const regEx = new RegExp(search, 'i');
       setFilteredSites(
-        sites.filter(site => site.label.match(new RegExp(search, 'i'))),
+        sites.filter(
+          site => site.label.match(regEx) || site.issuer?.match(regEx),
+        ),
       );
     }
   }, [search, sites]);
@@ -68,9 +71,11 @@ const Home: FC = () => {
           <Trans>No results matching your search</Trans>
         </Text>
       )}
-      {filteredSites.map((site, index) => (
-        <SiteInfo key={index} site={site} />
-      ))}
+      <ScrollView style={styles.scrollView}>
+        {filteredSites.map((site, index) => (
+          <SiteInfo key={index} site={site} />
+        ))}
+      </ScrollView>
     </>
   );
 };
@@ -83,6 +88,9 @@ const styles = StyleSheet.create({
     width: 24,
     height: 24,
     position: 'absolute',
+  },
+  scrollView: {
+    marginBottom: 32,
   },
 });
 

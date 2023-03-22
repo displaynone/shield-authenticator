@@ -15,11 +15,9 @@ const CopyToClipboard: FC<CopyToClipboardProps> = ({ text }) => {
   const { setNotification } = useNotification();
 
   const handleCopyToClipboard = () => {
-    const copyToClipboard = async () => {
-      await Clipboard.setStringAsync(text);
-      setNotification(<Trans>Token copied to clipboard</Trans>);
-    };
-    copyToClipboard();
+    Clipboard.setStringAsync(text).then(res =>
+      setNotification(<Trans>Token copied to clipboard</Trans>),
+    );
   };
 
   return (

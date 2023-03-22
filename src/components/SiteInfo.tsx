@@ -16,7 +16,7 @@ type SiteInfoProps = {
 
 const SiteInfo: FC<SiteInfoProps> = ({ site }) => {
   const period = site.period || DEFAULT_TOTP_PERIOD;
-  const timer = useTimer(period, 150);
+  const timer = useTimer(period, 1000);
   const progress = (100 * timer) / period;
 
   const token = generateTOTP({
