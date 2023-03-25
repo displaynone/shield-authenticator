@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.2](https://github.com/displaynone/timepass/compare/v1.5.1...v1.5.2) (2023-03-25)
+
+
+### Bug Fixes
+
+* remove expo github action ([a824961](https://github.com/displaynone/timepass/commit/a82496137e4ab0dbd3e9092c75792df7a620f3e2))
+
 ## [1.5.1](https://github.com/displaynone/timepass/compare/v1.5.0...v1.5.1) (2023-03-25)
 
 
