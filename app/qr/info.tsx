@@ -8,7 +8,6 @@ import Container from '../../src/ui/Container';
 import Text from '../../src/ui/Text';
 import IssuerIcon from '../../src/ui/IssuerIcon';
 import colors from '../../src/constants/colors';
-import { useTimer } from '../../src/hooks/useTimer';
 import { DEFAULT_TOTP_PERIOD } from '../../src/constants/app';
 import SiteToken from '../../src/ui/SiteToken';
 import { generateTOTP, getAlgorithm } from '../../src/util/generateTotp';
@@ -23,8 +22,6 @@ const QRInfo: FC = () => {
   const [site, setSite] = useState<Site>();
 
   const period = site?.period || DEFAULT_TOTP_PERIOD;
-  const timer = useTimer(period, 150);
-  const progress = (100 * timer) / period;
 
   useEffect(() => {
     newSite(params).then(s => setSite(s));
@@ -44,12 +41,7 @@ const QRInfo: FC = () => {
   return (
     <Container variant={['fullscreen', 'filled']}>
       <View style={styles.icon}>
-        <IssuerIcon
-          size={124}
-          color={colors.white}
-          issuer={site.issuer}
-          progress={progress}
-        />
+        <IssuerIcon size={124} color={colors.white} issuer={site.issuer} />
       </View>
       <View style={styles.container}>
         <Text variant={['secondary', 'bold']} size="bodyLarge">

@@ -22,7 +22,7 @@ export const NotificationContext =
   createContext<NotificationContextInterface>(initialDBContext);
 export const useNotification = () => useContext(NotificationContext);
 
-const SNACKBAR_DURATION = 5000;
+const SNACKBAR_DURATION = 3000;
 
 const NotificationProvider: FC<ComponentWithChildren> = ({ children }) => {
   const [notification, setNotification] = useState<string | ReactNode>();

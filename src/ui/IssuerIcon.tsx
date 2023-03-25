@@ -1,63 +1,53 @@
 import { FC } from 'react';
 import { StyleSheet, View } from 'react-native';
-import { Circle, Svg } from 'react-native-svg';
-import colors from '../constants/colors';
-import { BoxIcon } from '../icons/sites/BoxIcon';
-import { TwitterIcon } from '../icons/sites/TwitterIcon';
-import { DropboxIcon } from '../icons/sites/DropboxIcon';
-import { GoogleIcon } from '../icons/sites/GoogleIcon';
 import { DefaultIcon } from '../icons/DefaultIcon';
-import { MegaIcon } from '../icons/sites/MegaIcon';
-import { MicrosoftIcon } from '../icons/sites/MicrosoftIcon';
-import { UdraftPlusComIcon } from '../icons/sites/UdraftPlusComIcon';
-import { WetransferProdIcon } from '../icons/sites/WetransferProdIcon';
-import { DigitalOceanIcon } from '../icons/sites/DigitalOceanIcon';
-import { HerokuIcon } from '../icons/sites/HerokuIcon';
-import { VultrIcon } from '../icons/sites/VultrIcon';
-import { DiscordIcon } from '../icons/sites/DiscordIcon';
-import { SlackIcon } from '../icons/sites/SlackIcon';
-import { ZohoIcon } from '../icons/sites/ZohoIcon';
-import { ZoomIcon } from '../icons/sites/ZoomIcon';
-import { FigmaIcon } from '../icons/sites/FigmaIcon';
-import { SketchIcon } from '../icons/sites/SketchIcon';
-import { KoFiIcon } from '../icons/sites/KoFiIcon';
-import { PatreonIcon } from '../icons/sites/PatreonIcon';
 import { AlgoliaIcon } from '../icons/sites/AlgoliaIcon';
 import { ArduinoIcon } from '../icons/sites/ArduinoIcon';
 import { BitbucketIcon } from '../icons/sites/BitbucketIcon';
+import { BoxIcon } from '../icons/sites/BoxIcon';
 import { BugsnagIcon } from '../icons/sites/BugsnagIcon';
 import { CloudflareIcon } from '../icons/sites/CloudflareIcon';
+import { DigitalOceanIcon } from '../icons/sites/DigitalOceanIcon';
+import { DiscordIcon } from '../icons/sites/DiscordIcon';
 import { DockerIcon } from '../icons/sites/DockerIcon';
+import { DropboxIcon } from '../icons/sites/DropboxIcon';
 import { ExpoIcon } from '../icons/sites/ExpoIcon';
+import { FigmaIcon } from '../icons/sites/FigmaIcon';
 import { GithubIcon } from '../icons/sites/GithubIcon';
 import { GitlabIcon } from '../icons/sites/GitlabIcon';
+import { GoogleIcon } from '../icons/sites/GoogleIcon';
+import { HerokuIcon } from '../icons/sites/HerokuIcon';
 import { InvisionIcon } from '../icons/sites/InvisionIcon';
 import { JetBrainsIcon } from '../icons/sites/JetBrainsIcon';
+import { KoFiIcon } from '../icons/sites/KoFiIcon';
 import { LocalizeIcon } from '../icons/sites/LocalizeIcon';
+import { MegaIcon } from '../icons/sites/MegaIcon';
+import { MicrosoftIcon } from '../icons/sites/MicrosoftIcon';
 import { MongoDBIcon } from '../icons/sites/MongoDBIcon';
 import { MxToolboxIcon } from '../icons/sites/MxToolboxIcon';
 import { NpmIcon } from '../icons/sites/NpmIcon';
-import { PackagistIcon } from '../icons/sites/PackagistIcon';
 import { POEditorIcon } from '../icons/sites/POEditorIcon';
+import { PackagistIcon } from '../icons/sites/PackagistIcon';
+import { PatreonIcon } from '../icons/sites/PatreonIcon';
 import { PostmanIcon } from '../icons/sites/PostmanIcon';
 import { PyPIIcon } from '../icons/sites/PyPIIcon';
+import { SketchIcon } from '../icons/sites/SketchIcon';
+import { SlackIcon } from '../icons/sites/SlackIcon';
+import { TwitterIcon } from '../icons/sites/TwitterIcon';
+import { UdraftPlusComIcon } from '../icons/sites/UdraftPlusComIcon';
 import { UnityIcon } from '../icons/sites/UnityIcon';
+import { VultrIcon } from '../icons/sites/VultrIcon';
+import { WetransferProdIcon } from '../icons/sites/WetransferProdIcon';
+import { ZohoIcon } from '../icons/sites/ZohoIcon';
+import { ZoomIcon } from '../icons/sites/ZoomIcon';
 
 type IssuerProps = {
   issuer?: string;
-  progress?: number;
   size?: number;
-  strokeWidth?: number;
   color?: string;
 };
 
-const IssuerIcon: FC<IssuerProps> = ({
-  issuer,
-  progress = 0,
-  size = 58,
-  strokeWidth = 4,
-  color,
-}) => {
+const IssuerIcon: FC<IssuerProps> = ({ issuer, size = 58, color }) => {
   const styles = getStyles(size);
   const getComponent = () => {
     switch (issuer?.toLowerCase()) {
@@ -145,40 +135,10 @@ const IssuerIcon: FC<IssuerProps> = ({
     return DefaultIcon;
   };
   const Component = getComponent();
-  const radius = size / 2 - strokeWidth;
-  const circum = radius * 2 * Math.PI;
-  const svgProgress = 100 - progress;
-
-  const strokeDashoffset = radius * Math.PI * 2 * (svgProgress / 100);
 
   return (
     <View style={styles.icon}>
-      <View style={styles.progress}>
-        <Svg width={size} height={size}>
-          <Circle
-            stroke={colors.medium}
-            fill="none"
-            cx={size / 2}
-            cy={size / 2}
-            r={radius}
-            strokeLinecap="butt"
-            {...{ strokeWidth }}
-          />
-          <Circle
-            stroke={colors.light}
-            fill="none"
-            cx={size / 2}
-            cy={size / 2}
-            r={radius}
-            strokeDasharray={`${circum} ${circum}`}
-            strokeDashoffset={+strokeDashoffset}
-            strokeLinecap="butt"
-            transform={`rotate(-90, ${size / 2}, ${size / 2})`}
-            {...{ strokeWidth }}
-          />
-        </Svg>
-      </View>
-      <Component width={size - strokeWidth - 18} color={color} />
+      <Component width={size} color={color} />
     </View>
   );
 };

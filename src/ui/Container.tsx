@@ -1,11 +1,5 @@
 import { FC } from 'react';
-import {
-  Dimensions,
-  StyleProp,
-  StyleSheet,
-  View,
-  ViewStyle,
-} from 'react-native';
+import { StyleProp, StyleSheet, View, ViewStyle } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import colors from '../constants/colors';
 import { ComponentWithChildren } from '../types';

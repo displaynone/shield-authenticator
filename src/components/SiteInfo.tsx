@@ -1,36 +1,42 @@
-import { FC } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { DEFAULT_TOTP_PERIOD } from '../constants/app';
 import colors from '../constants/colors';
-import { useTimer } from '../hooks/useTimer';
 import Site from '../models/Site';
 import IssuerIcon from '../ui/IssuerIcon';
 import SiteToken from '../ui/SiteToken';
 import Text from '../ui/Text';
 import { generateTOTP, getAlgorithm } from '../util/generateTotp';
 import CopyToClipboard from './CopyToClipboard';
+import { useTimer } from '../hooks/useTimer';
 
 type SiteInfoProps = {
   site: Site;
 };
 
 const SiteInfo: FC<SiteInfoProps> = ({ site }) => {
+  const [token, setToken] = useState('');
   const period = site.period || DEFAULT_TOTP_PERIOD;
-  const timer = useTimer(period, 1000);
-  const progress = (100 * timer) / period;
 
-  const token = generateTOTP({
-    algorithm: getAlgorithm(site.algorithm),
-    digits: site.digits,
-    period,
-    secret: site.secret,
-  });
+  const timer = useTimer(period, 10000);
+
+  useEffect(() => {
+    if (timer) {
+      const t = generateTOTP({
+        algorithm: getAlgorithm(site.algorithm),
+        digits: site.digits,
+        period,
+        secret: site.secret,
+      });
+      setToken(t);
+    }
+  }, [period, site.algorithm, site.digits, site.secret, timer]);
 
   return (
     <View style={styles.card}>
       <View style={styles.main}>
         <View style={styles.icon}>
-          <IssuerIcon issuer={site.issuer} progress={progress} />
+          <IssuerIcon issuer={site.issuer} />
         </View>
         <View>
           <Text size="titleSmall" variant={['marginless', 'primary']}>
