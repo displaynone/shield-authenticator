@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.0](https://github.com/displaynone/timepass/compare/v1.5.2...v1.6.0) (2023-03-25)
+
+
+### Features
+
+* added topbar ([d0fb6bf](https://github.com/displaynone/timepass/commit/d0fb6bf28f35bba27207e69c4e3ed58c20bff6e9))
+
 ## [1.5.2](https://github.com/displaynone/timepass/compare/v1.5.1...v1.5.2) (2023-03-25)
 
 
