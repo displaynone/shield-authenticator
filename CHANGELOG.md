@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.1](https://github.com/displaynone/timepass/compare/v1.5.0...v1.5.1) (2023-03-25)
+
+
+### Bug Fixes
+
+* performance issues when showing time remaining ([8ef6cc5](https://github.com/displaynone/timepass/commit/8ef6cc5f44090e69e4e9a079433c0b255376d8b0))
+
 ## [1.5.0](https://github.com/displaynone/timepass/compare/v1.4.0...v1.5.0) (2023-03-22)
 
 
