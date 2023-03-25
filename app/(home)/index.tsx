@@ -1,42 +1,37 @@
 import React, { FC, useEffect, useState } from 'react';
 
 import { Trans, t } from '@lingui/macro';
-import { ActivityIndicator, ScrollView, StyleSheet, View } from 'react-native';
+import { ActivityIndicator, FlatList, StyleSheet, View } from 'react-native';
 import { TextInput } from 'react-native-paper';
 import SiteInfo from '../../src/components/SiteInfo';
 import colors from '../../src/constants/colors';
 import Site from '../../src/models/Site';
 import { useDB } from '../../src/providers/DatabaseProvider';
 import Text from '../../src/ui/Text';
+import Progress from '../../src/ui/Progress';
 
 const Home: FC = () => {
   const { listSites } = useDB();
   const [sites, setSites] = useState<Site[]>([]);
-  const [filteredSites, setFilteredSites] = useState<Site[]>([]);
   const [search, setSearch] = useState<string>();
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setLoading(true);
-    listSites().then(list => {
-      setSites(list);
-      setFilteredSites(list);
-      setLoading(false);
-    });
-  }, [listSites]);
-
-  useEffect(() => {
-    if (!search) {
-      setFilteredSites(sites);
-    } else {
-      const regEx = new RegExp(search, 'i');
-      setFilteredSites(
-        sites.filter(
-          site => site.label.match(regEx) || site.issuer?.match(regEx),
-        ),
-      );
+    if (!sites.length) {
+      setLoading(true);
+      listSites().then(list => {
+        setSites(list);
+        setLoading(false);
+      });
     }
-  }, [search, sites]);
+  }, [listSites, sites.length]);
+
+  const regEx = new RegExp(search || '', 'i');
+  const filteredSites = !search
+    ? sites
+    : sites.filter(
+        site => site.label.match(regEx) || site.issuer?.match(regEx),
+      );
 
   if (loading) return <ActivityIndicator />;
 
@@ -50,6 +45,7 @@ const Home: FC = () => {
 
   return (
     <>
+      <Progress />
       <View style={styles.inputWrapper}>
         <TextInput
           value={search}
@@ -71,11 +67,11 @@ const Home: FC = () => {
           <Trans>No results matching your search</Trans>
         </Text>
       )}
-      <ScrollView style={styles.scrollView}>
-        {filteredSites.map((site, index) => (
-          <SiteInfo key={index} site={site} />
-        ))}
-      </ScrollView>
+      <FlatList
+        style={styles.scrollView}
+        data={filteredSites}
+        renderItem={site => <SiteInfo site={site.item} />}
+      />
     </>
   );
 };

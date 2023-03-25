@@ -1,0 +1,40 @@
+
+ otpauth://totp/Twitter:@Pxxxxx?secret=XXX&algorith=SHA-1&digits=6&period=0&issuer=Twitter
+ otpauth://totp/Dropbox:xxxxx?secret=XXX&algorith=SHA-1&digits=6&period=0&issuer=Dropbox
+ otpauth://totp/xxxxx?secret=XXX&algorith=SHA-1&digits=6&period=0&issuer=Zoom
+ otpauth://totp/Google:xxxx?secret=XXX&algorith=SHA-1&digits=6&period=0&issuer=Google
+ otpauth://totp/MEGA:xxxxx?secret=XXX&algorith=SHA-1&digits=6&period=0&issuer=MEGA
+ otpauth://totp/Microsoft:xxxxx?secret=XXX&algorith=SHA-1&digits=6&period=0&issuer=Microsoft
+ otpauth://totp/updraftplus.com:xxxxx?secret=XXX&algorith=SHA-1&digits=6&period=0&issuer=updraftplus.com
+ otpauth://totp/wetransfer-prod:xxxxx?secret=XXX&algorith=SHA-1&digits=6&period=0&issuer=wetransfer-prod
+ otpauth://totp/DigitalOcean:xxxxx?secret=XXX&algorith=SHA1&digits=6&period=0&issuer=DigitalOcean
+ otpauth://totp/Heroku:xxxx?secret=XXX&algorith=SHA1&digits=6&period=0&issuer=Heroku
+ otpauth://totp/Vultr:xxxxx?secret=XXX&algorith=SHA-1&digits=6&period=0&issuer=Vultr
+ otpauth://totp/Discord:xxxxx?secret=XXX&algorith=SHA-1&digits=6&period=0&issuer=Discord
+ otpauth://totp/Slack (xxxx):xxxxx?secret=XXX&algorith=SHA-1&digits=6&period=0&issuer=Slack
+ otpauth://totp/Zoho:xxxxx?secret=XXX&algorith=SHA1&digits=6&period=0&issuer=Zoho
+ otpauth://totp/xxxxx?secret=XXX&algorith=SHA1&digits=6&period=0&issuer=Box
+ otpauth://totp/Figma:xxxxx?secret=XXX&algorith=SHA-1&digits=6&period=0&issuer=Figma
+ otpauth://totp/Sketch/xxxxx?secret=XXX&algorith=SHA-1&digits=6&period=0&issuer=Sketch
+ otpauth://totp/Ko-fi?secret=XXX&algorith=SHA-1&digits=6&period=0&issuer=Ko-fi
+ otpauth://totp/Patreon:xxxxx?secret=XXX&algorith=SHA-1&digits=6&period=0&issuer=Patreon
+ otpauth://totp/xxxxx?secret=XXX&algorith=SHA-1&digits=6&period=0&issuer=Algolia
+ otpauth://totp/Arduino:xxxxx?secret=XXX&algorith=SHA1&digits=6&period=0&issuer=Arduino
+ otpauth://totp/Bitbucket:xxxxx2?secret=XXX&algorith=SHA-1&digits=6&period=0&issuer=Bitbucket
+ otpauth://totp/Bugsnag:Bugsnag_xxxxx?secret=XXX&algorith=SHA-1&digits=6&period=0&issuer=Bugsnag
+ otpauth://totp/Cloudflare:xxxxx?secret=XXX&algorith=SHA-1&digits=6&period=0&issuer=Cloudflare
+ otpauth://totp/hub.docker.com:xxxxx?secret=XXX&algorith=SHA1&digits=6&period=0&issuer=hub.docker.com
+ otpauth://totp/Expo:xxxxx?secret=XXX&algorith=SHA1&digits=6&period=0&issuer=Expo
+ otpauth://totp/GitHub:xxxxx?secret=XXX&algorith=SHA-1&digits=6&period=0&issuer=GitHub
+ otpauth://totp/gitlab.com:gitlab.com_xxxxx?secret=XXX&algorith=SHA-1&digits=6&period=0&issuer=gitlab.com
+ otpauth://totp/InVisionApp:xxxxx?secret=XXX&algorith=SHA1&digits=6&period=0&issuer=InVisionApp
+ otpauth://totp/JetBrains Account:xxxxx?secret=XXX&algorith=SHA-1&digits=6&period=0&issuer=JetBrains Account
+ otpauth://totp/xxxx?secret=XXX&algorith=SHA-1&digits=6&period=0&issuer=Localize
+ otpauth://totp/auth.mongodb.com:xxxxx?secret=XXX&algorith=SHA-1&digits=6&period=0&issuer=auth.mongodb.com
+ otpauth://totp/Mxtoolbox:xxxxx?secret=XXX&algorith=SHA-1&digits=6&period=0&issuer=Mxtoolbox
+ otpauth://totp/xxxx?secret=XXX&algorith=SHA-1&digits=6&period=0&issuer=npm
+ otpauth://totp/Packagist:xxxxx@packagist.org?secret=XXX&algorith=SHA-1&digits=6&period=0&issuer=Packagist
+ otpauth://totp/xxxxx?secret=XXX&algorith=SHA-1&digits=6&period=0&issuer=POEditor
+ otpauth://totp/Postman:xxxxx?secret=XXX&algorith=SHA1&digits=6&period=0&issuer=Postman
+ otpauth://totp/PyPI:xxxxx?secret=XXX&algorith=SHA1&digits=6&period=0&issuer=PyPI
+ otpauth://totp/id.unity.com:xxxxx2?secret=XXX&algorith=SHA1&digits=6&period=0&issuer=id.unity.com
