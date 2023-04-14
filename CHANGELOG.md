@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.0](https://github.com/displaynone/timepass/compare/v1.6.0...v1.7.0) (2023-04-14)
+
+
+### Features
+
+* swipe to delete ([1df3b5b](https://github.com/displaynone/timepass/commit/1df3b5b78f0cda84a4bd67c17dd7dffd50199e83))
+
 ## [1.6.0](https://github.com/displaynone/timepass/compare/v1.5.2...v1.6.0) (2023-03-25)
 
 
