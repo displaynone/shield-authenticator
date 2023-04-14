@@ -20,6 +20,7 @@ const QRInfo: FC = () => {
   const { push } = useRouter();
   const { newSite } = useDB();
   const [site, setSite] = useState<Site>();
+  const [token, setToken] = useState('');
 
   const period = site?.period || DEFAULT_TOTP_PERIOD;
 
@@ -31,12 +32,12 @@ const QRInfo: FC = () => {
     return <ActivityIndicator />;
   }
 
-  const token = generateTOTP({
+  generateTOTP({
     algorithm: getAlgorithm(site.algorithm),
     digits: site.digits,
     period,
     secret: site.secret,
-  });
+  }).then(t => setToken(t));
 
   return (
     <Container variant={['fullscreen', 'filled']}>

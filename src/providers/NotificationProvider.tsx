@@ -10,16 +10,17 @@ import { ComponentWithChildren } from '../types';
 import { Snackbar } from 'react-native-paper';
 import Text from '../ui/Text';
 
-export interface NotificationContextInterface {
+export type NotificationContextInterface = {
   setNotification: (text: string | ReactNode) => void;
-}
+};
 
-const initialDBContext: NotificationContextInterface = {
+const initialNotificationContext: NotificationContextInterface = {
   setNotification: () => {},
 };
 
-export const NotificationContext =
-  createContext<NotificationContextInterface>(initialDBContext);
+export const NotificationContext = createContext<NotificationContextInterface>(
+  initialNotificationContext,
+);
 export const useNotification = () => useContext(NotificationContext);
 
 const SNACKBAR_DURATION = 3000;

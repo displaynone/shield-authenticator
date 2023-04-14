@@ -6,8 +6,8 @@ import { useTimer } from '../hooks/useTimer';
 import { StyleSheet, View } from 'react-native';
 
 const Progress: FC = () => {
-  const timer = useTimer(DEFAULT_TOTP_PERIOD);
-  const progress = timer / DEFAULT_TOTP_PERIOD;
+  const timer = useTimer(1);
+  const progress = (timer % DEFAULT_TOTP_PERIOD) / DEFAULT_TOTP_PERIOD;
   return (
     <View style={styles.container}>
       <ProgressBar progress={progress} color={colors.medium} />

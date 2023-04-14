@@ -14,7 +14,6 @@ import DatabaseProvider from '../providers/DatabaseProvider';
 import { FingerprintAuthProvider } from '../providers/FingerprintAuthProvider';
 import LocalizationProvider from '../providers/LocalizationProvider';
 import { ComponentWithChildren } from '../types';
-import Container from '../ui/Container';
 
 import * as SplashScreen from 'expo-splash-screen';
 import NotificationProvider from '../providers/NotificationProvider';

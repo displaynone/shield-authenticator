@@ -1,16 +1,22 @@
 import { useEffect, useState } from 'react';
 
-export const useTimer = (period: number, ms = 1000) => {
-  const [seconds, setSeconds] = useState(period);
+export const useTimer = (period?: number) => {
+  const [value, setValue] = useState(0);
 
   useEffect(() => {
-    const intervalId = setInterval(() => {
-      const date = new Date();
-      setSeconds((date.getSeconds() % period) + date.getMilliseconds() / 1000);
-    }, ms);
+    const checkTimeAndUpdateValue = () => {
+      const now = new Date();
+      const seconds = now.getSeconds();
 
-    return () => clearInterval(intervalId);
-  }, [ms, period]);
+      setValue(seconds);
+    };
 
-  return seconds;
+    const intervalId = setInterval(checkTimeAndUpdateValue, 1000);
+
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, [period]);
+
+  return value;
 };
