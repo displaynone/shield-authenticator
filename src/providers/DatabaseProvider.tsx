@@ -26,6 +26,7 @@ export interface DBContextInterface {
   db: Database;
   newSite: (site: OtpRecord) => Promise<Site>;
   listSites: () => Promise<Site[]>;
+  deleteSite: (site: Site) => void;
 }
 
 const updateSiteData = (site: Site, otpData: OtpRecord) => {
@@ -62,6 +63,12 @@ const newSite = (otpData: OtpRecord) =>
     return site;
   });
 
+const deleteSite = (site: Site) => {
+  db.write(async () => {
+    site.destroyPermanently();
+  });
+};
+
 const listSites = () =>
   db.collections.get<Site>(SITE_TABLE_NAME).query().fetch();
 
@@ -69,6 +76,7 @@ const initialDBContext: DBContextInterface = {
   db,
   newSite,
   listSites,
+  deleteSite,
 };
 
 export const DBContext = createContext<DBContextInterface>(initialDBContext);

@@ -1,19 +1,14 @@
 import React, { FC, useEffect, useState } from 'react';
 
-import { Trans, t } from '@lingui/macro';
-import { ActivityIndicator, FlatList, StyleSheet, View } from 'react-native';
-import { TextInput } from 'react-native-paper';
-import SiteInfo from '../../src/components/SiteInfo';
-import colors from '../../src/constants/colors';
+import { ActivityIndicator } from 'react-native';
+import SitesList from '../../src/components/SitesList';
 import Site from '../../src/models/Site';
 import { useDB } from '../../src/providers/DatabaseProvider';
-import Text from '../../src/ui/Text';
 import Progress from '../../src/ui/Progress';
 
 const Home: FC = () => {
   const { listSites } = useDB();
   const [sites, setSites] = useState<Site[]>([]);
-  const [search, setSearch] = useState<string>();
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -26,68 +21,18 @@ const Home: FC = () => {
     }
   }, [listSites, sites.length]);
 
-  const regEx = new RegExp(search || '', 'i');
-  const filteredSites = !search
-    ? sites
-    : sites.filter(
-        site => site.label.match(regEx) || site.issuer?.match(regEx),
-      );
+  const deleteSite = (site: Site) => {
+    setSites(sites.filter(s => site.label !== s.label));
+  };
 
   if (loading) return <ActivityIndicator />;
-
-  if (!sites.length) {
-    return (
-      <Text>
-        <Trans>No sites have been added yet</Trans>
-      </Text>
-    );
-  }
 
   return (
     <>
       <Progress />
-      <View style={styles.inputWrapper}>
-        <TextInput
-          value={search}
-          onChangeText={setSearch}
-          right={<TextInput.Icon icon="magnify" />}
-          placeholder={t`Search...`}
-          mode="outlined"
-          theme={{
-            colors: {
-              background: colors.white,
-            },
-          }}
-          outlineColor={colors.medium}
-          placeholderTextColor={colors.medium}
-        />
-      </View>
-      {!!sites.length && !filteredSites.length && (
-        <Text>
-          <Trans>No results matching your search</Trans>
-        </Text>
-      )}
-      <FlatList
-        style={styles.scrollView}
-        data={filteredSites}
-        renderItem={site => <SiteInfo site={site.item} />}
-      />
+      <SitesList sites={sites} deleteSite={deleteSite} />
     </>
   );
 };
-
-const styles = StyleSheet.create({
-  inputWrapper: {
-    marginBottom: 32,
-  },
-  icon: {
-    width: 24,
-    height: 24,
-    position: 'absolute',
-  },
-  scrollView: {
-    marginBottom: 32,
-  },
-});
 
 export default Home;

@@ -1,27 +1,34 @@
 import { FC } from 'react';
 import { StyleSheet, View } from 'react-native';
 import Text, { TextProps, TextVariantTypes } from './Text';
+import { ActivityIndicator } from 'react-native-paper';
+import colors from '../constants/colors';
 
 type SiteTokenProps = {
   value: string;
   variant?: 'primary' | 'tertiary';
   size?: TextProps['size'];
+  loading?: boolean;
 };
 
 const SiteToken: FC<SiteTokenProps> = ({
   value,
   variant = 'primary',
   size = 'headlineSmall',
+  loading = false,
 }) => {
   return (
     <View style={styles.container}>
-      {value.match(/\d{3}/g)?.map((num, index) => (
+      {value.match(/.{3}/g)?.map((num, index) => (
         <View style={styles.number} key={index}>
           <Text size={size} variant={[variant, 'marginless', 'bold']}>
             {num}
           </Text>
         </View>
       ))}
+      {(loading || value === '------') && (
+        <ActivityIndicator color={colors.medium} size={16} />
+      )}
     </View>
   );
 };

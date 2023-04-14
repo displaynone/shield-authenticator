@@ -14,8 +14,16 @@ export const getAlgorithm = (
   return algorithm as TOTPConfig['algorithm'];
 };
 
-export const generateTOTP = ({ secret, ...params }: TOTPConfig): string => {
-  const token = totp(secret, params);
-
-  return token;
+export const generateTOTP = ({
+  secret,
+  ...params
+}: TOTPConfig): Promise<string> => {
+  return new Promise((resolve, reject) => {
+    try {
+      const token = totp(secret, params);
+      resolve(token);
+    } catch (error) {
+      reject(error);
+    }
+  });
 };

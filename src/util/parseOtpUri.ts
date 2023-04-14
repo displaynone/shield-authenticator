@@ -20,7 +20,6 @@ import {
  *   - issuer?: string
  */
 export const parseOtpUri = (uri: string): OtpRecord => {
-  console.log({ uri });
   const url = new URL(uri);
   const type = url.host;
   const label = url.pathname.substring(1);

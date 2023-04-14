@@ -32,6 +32,7 @@
     "expo-barcode-scanner": "~12.3.2",
     "expo-build-properties": "~0.5.1",
     "expo-camera": "~13.2.1",
+    "expo-clipboard": "~4.1.2",
     "expo-constants": "~14.2.1",
     "expo-font": "~11.1.1",
     "expo-linking": "~4.0.1",
@@ -55,7 +56,9 @@
     "react-native-vector-icons": "^9.2.0",
     "react-native-web": "~0.18.11",
     "totp-generator": "^0.0.14",
-    "expo-clipboard": "~4.1.2"
+    "@shopify/flash-list": "1.4.0",
+    "expo-task-manager": "~11.1.1",
+    "expo-background-fetch": "~11.1.1"
   },
   "jest": {
     "preset": "jest-expo",
