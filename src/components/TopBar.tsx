@@ -8,7 +8,7 @@ const TopBar: FC = () => {
     <View style={styles.head}>
       <LogoIcon width={64} height={64} />
       <Text size="headlineSmall" variant={['marginless', 'bold']}>
-        TimePass
+        Shield Authenticator
       </Text>
     </View>
   );

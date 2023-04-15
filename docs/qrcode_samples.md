@@ -2,7 +2,7 @@
 
 The QR codes below represent examples of TOTP services offered by different companies and organizations. Each QR code includes a secret key that is required to generate a temporary, one-time password. Please note that the secret keys included in these examples are invalid and should not be used for actual authentication purposes.
 
-To try out these TOTP services, you can use a TOTP app like TimePass to scan the QR codes and generate the one-time passwords. This can help you better understand how TOTP services work and how they can be used for two-factor authentication.
+To try out these TOTP services, you can use a TOTP app like Shield Authenticator to scan the QR codes and generate the one-time passwords. This can help you better understand how TOTP services work and how they can be used for two-factor authentication.
 
 
 | Image Name | Image Preview |
