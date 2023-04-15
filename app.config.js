@@ -21,9 +21,9 @@ module.exports = {
         foregroundImage: './assets/logo.png',
         backgroundColor: '#FFFFFF',
       },
-      package: 'com.displaynone.timepass',
+      package: 'com.displaynone.shield-authenticator',
     },
-    scheme: 'timepass',
+    scheme: 'shield-authenticator',
     plugins: [
       'expo-localization',
       '@morrowdigital/watermelondb-expo-plugin',
