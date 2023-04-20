@@ -56,7 +56,7 @@ const QRScanner: FC = () => {
         <Text size="headlineSmall" variant={['bold', 'primary']}>
           <Trans>Add a new site</Trans>
         </Text>
-        <Text size="bodyLarge" variant={'secondary'}>
+        <Text size="bodyLarge" variant={'secondary'} numberOfLines={2}>
           <Trans>
             Scan your website's 2FA QR code using your device's camera
           </Trans>
@@ -70,7 +70,7 @@ const QRScanner: FC = () => {
                 ratio="1:1"
               />
             </View>
-            <Text size="bodyMedium" variant={'secondary'}>
+            <Text size="bodyMedium" variant={'secondary'} numberOfLines={2}>
               <Trans>
                 The QR code can be easily recognized by simply pointing your
                 device's camera at it

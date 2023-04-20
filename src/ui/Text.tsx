@@ -20,12 +20,14 @@ export type TextVariantTypes = (typeof variants)[number];
 export type TextProps = {
   variant?: TextVariantTypes | TextVariantTypes[];
   size?: keyof typeof MD3TypescaleKey;
+  numberOfLines?: number;
 };
 
 const Text: FC<ComponentWithChildren & TextProps> = ({
   children,
   variant = 'primary',
   size,
+  numberOfLines = 1,
 }) => {
   const theme = useTheme();
   const styles = getStyles(theme);
@@ -36,7 +38,7 @@ const Text: FC<ComponentWithChildren & TextProps> = ({
     <PaperText
       style={[styles.common, listOfStiles]}
       variant={size}
-      numberOfLines={1}
+      numberOfLines={numberOfLines}
     >
       {children}
     </PaperText>
