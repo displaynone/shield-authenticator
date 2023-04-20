@@ -3,7 +3,7 @@ import 'dotenv/config';
 module.exports = {
   expo: {
     name: 'Shield Authenticator',
-    slug: 'shield-authenticator',
+    slug: 'timepass',
     version: '1.0.0',
     orientation: 'portrait',
     icon: './assets/logo.png',
@@ -21,7 +21,7 @@ module.exports = {
         foregroundImage: './assets/logo.png',
         backgroundColor: '#FFFFFF',
       },
-      package: 'com.displaynone.shield-authenticator',
+      package: 'com.displaynone.timepass',
     },
     scheme: 'shield-authenticator',
     plugins: [
