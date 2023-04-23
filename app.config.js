@@ -22,6 +22,7 @@ module.exports = {
         backgroundColor: '#FFFFFF',
       },
       package: 'com.displaynone.timepass',
+      versionCode: 181000,
     },
     scheme: 'shield-authenticator',
     plugins: [
