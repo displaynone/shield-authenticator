@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.9.0](https://github.com/displaynone/shield-authenticator/compare/v1.8.2...v1.9.0) (2023-04-23)
+
+
+### Features
+
+* added some site icons: stripe, linkedin, paypal, amazon and facebook ([689632b](https://github.com/displaynone/shield-authenticator/commit/689632b5076e5dcefe8605ba8a38adc7cf1af798))
+
 ## [1.8.2](https://github.com/displaynone/shield-authenticator/compare/v1.8.1...v1.8.2) (2023-04-23)
 
 
