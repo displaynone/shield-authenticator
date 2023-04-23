@@ -96,7 +96,7 @@ export const FingerprintAuthProvider: FC<ComponentWithChildren> = ({
           <Text size="headlineMedium" variant="secondary">
             <Trans>Fingerprint authentication</Trans>
           </Text>
-          <Text size="bodyLarge" variant="secondary">
+          <Text size="bodyLarge" variant="secondary" numberOfLines={2}>
             <Trans>
               Secure the access to your stored 2FA using your device fingerprint
               authentication

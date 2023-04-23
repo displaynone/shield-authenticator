@@ -48,7 +48,7 @@ const Text: FC<ComponentWithChildren & TextProps> = ({
 const getStyles = (theme: MD3Theme) =>
   StyleSheet.create({
     common: {
-      paddingBottom: 32,
+      paddingBottom: 24,
     },
     primary: {
       color: theme.colors.primary,

@@ -24,7 +24,7 @@ const db = new Database({
 
 export interface DBContextInterface {
   db: Database;
-  newSite: (site: OtpRecord) => Promise<Site>;
+  newSite: (site: OtpRecord, update?: boolean) => Promise<Site>;
   listSites: () => Promise<Site[]>;
   deleteSite: (site: Site) => void;
 }
@@ -39,7 +39,7 @@ const updateSiteData = (site: Site, otpData: OtpRecord) => {
   site.period = otpData.period;
 };
 
-const newSite = (otpData: OtpRecord) =>
+const newSite = (otpData: OtpRecord, update = true) =>
   db.write(async () => {
     const existing = await db.collections
       .get<Site>(SITE_TABLE_NAME)
@@ -51,6 +51,9 @@ const newSite = (otpData: OtpRecord) =>
       )
       .fetch();
     if (existing.length) {
+      if (!update) {
+        return existing[0];
+      }
       const updateSite = await existing[0].update(site =>
         updateSiteData(site, otpData),
       );

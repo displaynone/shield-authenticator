@@ -29,7 +29,7 @@ const Home: FC = () => {
 
   return (
     <>
-      <Progress />
+      {!!sites.length && <Progress />}
       <SitesList sites={sites} deleteSite={deleteSite} />
     </>
   );

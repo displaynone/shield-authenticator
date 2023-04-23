@@ -74,3 +74,5 @@ android/
 .env
 
 # @end expo-cli
+
+.eslintcache

@@ -11,7 +11,7 @@ const AddSite: FC = () => {
       icon="plus"
       style={styles.fab}
       onPress={() => push('/qr')}
-      label={t`Add site`}
+      label={t`Add new site`}
     />
   );
 };
