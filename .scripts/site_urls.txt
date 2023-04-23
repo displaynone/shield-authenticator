@@ -38,3 +38,4 @@
  otpauth://totp/Postman:xxxxx?secret=XXX&algorith=SHA1&digits=6&period=0&issuer=Postman
  otpauth://totp/PyPI:xxxxx?secret=XXX&algorith=SHA1&digits=6&period=0&issuer=PyPI
  otpauth://totp/id.unity.com:xxxxx2?secret=XXX&algorith=SHA1&digits=6&period=0&issuer=id.unity.com
+ otpauth://totp/linkedin?secret=XXXXXXX&issuer=linkedin
