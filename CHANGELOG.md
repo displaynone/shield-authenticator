@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.8.1](https://github.com/displaynone/shield-authenticator/compare/v1.8.0...v1.8.1) (2023-04-23)
+
+
+### Bug Fixes
+
+* app version ([c0c0f87](https://github.com/displaynone/shield-authenticator/commit/c0c0f8798d314d62094d0cdec01b0d363de26f9e))
+* app version ([7b9fbb1](https://github.com/displaynone/shield-authenticator/commit/7b9fbb157a25cbd2f2f0df684a0e7d5cfbbd3d48))
+
 ## [1.8.0](https://github.com/displaynone/shield-authenticator/compare/v1.7.0...v1.8.0) (2023-04-23)
 
 
