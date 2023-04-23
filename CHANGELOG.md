@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.10.0](https://github.com/displaynone/shield-authenticator/compare/v1.9.0...v1.10.0) (2023-04-23)
+
+
+### Features
+
+* localization in es, fr, de, it, zh, ar ([6e11256](https://github.com/displaynone/shield-authenticator/commit/6e112569759712f786cd986042b5920fdbb4d352))
+
 ## [1.9.0](https://github.com/displaynone/shield-authenticator/compare/v1.8.2...v1.9.0) (2023-04-23)
 
 
