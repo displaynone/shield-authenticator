@@ -13,21 +13,60 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
+#: app/qr/index.tsx:57
 #: src/components/AddSite.tsx:14
-msgid "Add site"
+msgid "Add a new site"
 msgstr "Añadir sitio"
 
+#: src/components/AddSite.tsx:14
+#~ msgid "Add site"
+#~ msgstr "Añadir sitio"
+
+#: app/settings/export.tsx:58
+#: src/components/TopBar.tsx:36
+msgid "Backup your data"
+msgstr "Copia de seguridad"
+
+#: src/components/SiteInfo.tsx:79
 #: src/providers/FingerprintAuthProvider.tsx:39
 msgid "Cancel"
 msgstr "Cancelar"
+
+#: app/settings/import.tsx:78
+msgid "Completed"
+msgstr "Completado"
+
+#: src/components/SiteInfo.tsx:101
+msgid "Confirm deletion"
+msgstr "Confirmar borrado"
+
+#: src/components/SiteInfo.tsx:91
+msgid "Delete"
+msgstr "Borrar"
 
 #: src/providers/FingerprintAuthProvider.tsx:107
 msgid "Enable"
 msgstr "Activar"
 
+#: src/components/SitesList.tsx:63
+msgid "Everything is prepared for you to add your sites"
+msgstr "Todo está listo para que añadas tus sitios"
+
 #: src/providers/FingerprintAuthProvider.tsx:97
 msgid "Fingerprint authentication"
 msgstr "Autenticación por huella dactilar"
+
+#: app/settings/export.tsx:73
+msgid "Generate file"
+msgstr "Generar fichero"
+
+#: app/settings/import.tsx:63
+msgid "If you want to restore your saved sites from a backup, you can load the file stored on your device. It's important to note that the existing sites will remain unchanged and won't be replaced"
+msgstr "Si quieres recuperar tu copia de seguridad, puedes cargar el fichero guardado en tu dispositivo. Es importante que sepas que los sitios existentes no serán reemplazados por los importados"
+
+#: app/settings/import.tsx:99
+msgid "Load backup sites"
+msgstr "Cargar copia de seguridad"
 
 #: src/providers/FingerprintAuthProvider.tsx:87
 #~ msgid "Login"
@@ -37,18 +76,63 @@ msgstr "Autenticación por huella dactilar"
 msgid "Login with your fingerprint"
 msgstr "Accede mediante tu huella dactilar"
 
-#: app/(home)/index.tsx:70
+#: app/qr/index.tsx:48
+msgid "No access to camera"
+msgstr "No se puede acceder a la cámara"
+
+#: src/components/SitesList.tsx:93
 msgid "No results matching your search"
 msgstr "No hay resultados para tu búsqueda"
 
 #: app/(home)/index.tsx:45
-msgid "No sites have been added yet"
-msgstr "Aún no se ha añadido ningún sitio"
+#~ msgid "No sites have been added yet"
+#~ msgstr "Aún no se ha añadido ningún sitio"
 
-#: app/(home)/index.tsx:57
+#: app/settings/import.tsx:77
+msgid "Processing"
+msgstr "Procesando"
+
+#: app/qr/index.tsx:41
+msgid "Requesting for camera permission"
+msgstr "Solicitando permiso de la cámara"
+
+#: app/settings/import.tsx:60
+#: src/components/TopBar.tsx:41
+msgid "Restore sites"
+msgstr "Recuperar datos"
+
+#: app/qr/index.tsx:88
+msgid "Scan QR code"
+msgstr "Escanear código QR"
+
+#: app/qr/info.tsx:62
+msgid "Scan another code"
+msgstr "Escanear otro código"
+
+#: app/qr/index.tsx:60
+msgid "Scan your website's 2FA QR code using your device's camera"
+msgstr "Escanea el código QR 2FA de tu web usando la cámara"
+
+#: src/components/SitesList.tsx:80
 msgid "Search..."
 msgstr "Buscar..."
 
 #: src/providers/FingerprintAuthProvider.tsx:100
 msgid "Secure the access to your stored 2FA using your device fingerprint authentication"
 msgstr "Segura el acceso a tus claves 2FA usando la autenticación por huella dactilar de tu dispositivo"
+
+#: app/qr/index.tsx:74
+msgid "The QR code can be easily recognized by simply pointing your device's camera at it"
+msgstr "El código QR se puede reconocer simplemente apuntado a él la camara"
+
+#: app/settings/export.tsx:61
+msgid "To ensure that you don't lose your saved data, you can download a file of the sites and restore them at a later time"
+msgstr "Para asegurarse de que no pierdas tus datos guardados, puedes descargarte un fichero con los sitios y recuperarlos más tarde"
+
+#: src/components/CopyToClipboard.tsx:19
+msgid "Token copied to clipboard"
+msgstr "Tolen copiado"
+
+#: app/settings/import.tsx:84
+msgid "{sitesProcessed, plural, one {Processed 1 site of {numberOfSites}} other {Processed # sites of {numberOfSites}}}"
+msgstr "{sitesProcessed, plural, one {Procesado 1 sitio de {numberOfSites}} other {Procesados # sitios de {numberOfSites}}}"
