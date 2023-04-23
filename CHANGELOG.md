@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.8.2](https://github.com/displaynone/shield-authenticator/compare/v1.8.1...v1.8.2) (2023-04-23)
+
+
+### Bug Fixes
+
+* expo android versioncode ([26dfbb5](https://github.com/displaynone/shield-authenticator/commit/26dfbb549e67207b01b7b5c1821ac09c4c7e575d))
+
 ## [1.8.1](https://github.com/displaynone/shield-authenticator/compare/v1.8.0...v1.8.1) (2023-04-23)
 
 
