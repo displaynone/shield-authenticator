@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.8.0](https://github.com/displaynone/shield-authenticator/compare/v1.7.0...v1.8.0) (2023-04-23)
+
+
+### Features
+
+* added backup and restore sites ([7a28a51](https://github.com/displaynone/shield-authenticator/commit/7a28a5171354e822ab0a49015840e31991629108))
+
 ## [1.7.0](https://github.com/displaynone/shield-authenticator/compare/v1.6.0...v1.7.0) (2023-04-14)
 
 
