@@ -10,7 +10,7 @@ import React, {
 
 import { Trans, t } from '@lingui/macro';
 import { FlashList } from '@shopify/flash-list';
-import { StyleSheet, View, ViewToken } from 'react-native';
+import { Dimensions, StyleSheet, View, ViewToken } from 'react-native';
 import { TextInput } from 'react-native-paper';
 import { DEFAULT_TOTP_PERIOD } from '../constants/app';
 import colors from '../constants/colors';
@@ -18,6 +18,7 @@ import { useTimer30 } from '../hooks/useTimer30';
 import Site from '../models/Site';
 import Text from '../ui/Text';
 import SiteInfo from './SiteInfo';
+import { NoSitesIcon } from '../icons/NoSites';
 
 type SitesListProps = {
   sites: Site[];
@@ -57,15 +58,21 @@ const SitesList: FC<SitesListProps> = ({ sites, deleteSite }) => {
 
   if (!sites.length) {
     return (
-      <Text>
-        <Trans>No sites have been added yet</Trans>
-      </Text>
+      <View style={styles.wrapperNoResults}>
+        <Text size="bodyLarge" numberOfLines={2}>
+          <Trans>Everything is prepared for you to add your sites</Trans>
+        </Text>
+        <NoSitesIcon
+          width={Dimensions.get('screen').width - 48}
+          height={Dimensions.get('screen').width - 48}
+        />
+      </View>
     );
   }
 
   return (
     <>
-      <View style={styles.inputWrapper}>
+      <View style={styles.wrapper}>
         <TextInput
           value={search}
           onChangeText={setSearch}
@@ -110,8 +117,11 @@ const SitesList: FC<SitesListProps> = ({ sites, deleteSite }) => {
 };
 
 const styles = StyleSheet.create({
-  inputWrapper: {
+  wrapper: {
     marginBottom: 32,
+  },
+  wrapperNoResults: {
+    marginTop: 32,
   },
   icon: {
     width: 24,

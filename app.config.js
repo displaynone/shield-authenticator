@@ -27,6 +27,7 @@ module.exports = {
     plugins: [
       'expo-localization',
       '@morrowdigital/watermelondb-expo-plugin',
+      'expo-document-picker',
       [
         'expo-build-properties',
         {
