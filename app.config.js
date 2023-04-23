@@ -4,7 +4,7 @@ module.exports = {
   expo: {
     name: 'Shield Authenticator',
     slug: 'timepass',
-    version: '1.8.1',
+    version: '1.9.0',
     orientation: 'portrait',
     icon: './assets/logo.png',
     splash: {
@@ -22,7 +22,7 @@ module.exports = {
         backgroundColor: '#FFFFFF',
       },
       package: 'com.displaynone.timepass',
-      versionCode: 181000,
+      versionCode: 190000,
     },
     scheme: 'shield-authenticator',
     plugins: [
