@@ -4,7 +4,7 @@ module.exports = {
   expo: {
     name: 'Shield Authenticator',
     slug: 'timepass',
-    version: '1.8.0',
+    version: '1.8.1',
     orientation: 'portrait',
     icon: './assets/logo.png',
     splash: {
