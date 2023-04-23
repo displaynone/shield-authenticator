@@ -40,6 +40,11 @@ import { VultrIcon } from '../icons/sites/VultrIcon';
 import { WetransferProdIcon } from '../icons/sites/WetransferProdIcon';
 import { ZohoIcon } from '../icons/sites/ZohoIcon';
 import { ZoomIcon } from '../icons/sites/ZoomIcon';
+import { StripeIcon } from '../icons/sites/StripeIcon';
+import { LinkedinIcon } from '../icons/sites/LinkedinIcon';
+import { PaypalIcon } from '../icons/sites/Paypal';
+import { AmazonIcon } from '../icons/sites/AmazonIcon';
+import { FacebookIcon } from '../icons/sites/FacebookIcon';
 
 type IssuerProps = {
   issuer?: string;
@@ -131,6 +136,16 @@ const IssuerIcon: FC<IssuerProps> = ({ issuer, size = 58, color }) => {
         return PyPIIcon;
       case 'id.unity.com':
         return UnityIcon;
+      case 'stripe':
+        return StripeIcon;
+      case 'linkedin':
+        return LinkedinIcon;
+      case 'paypal':
+        return PaypalIcon;
+      case 'amazon':
+        return AmazonIcon;
+      case 'facebook':
+        return FacebookIcon;
     }
     return DefaultIcon;
   };
