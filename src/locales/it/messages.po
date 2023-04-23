@@ -16,7 +16,7 @@ msgstr ""
 #: app/qr/index.tsx:57
 #: src/components/AddSite.tsx:14
 msgid "Add a new site"
-msgstr ""
+msgstr "Nuovo sito"
 
 #: src/components/AddSite.tsx:14
 #~ msgid "Add site"
@@ -25,48 +25,48 @@ msgstr ""
 #: app/settings/export.tsx:58
 #: src/components/TopBar.tsx:36
 msgid "Backup your data"
-msgstr ""
+msgstr "Eseguire il backup dei dati"
 
 #: src/components/SiteInfo.tsx:79
 #: src/providers/FingerprintAuthProvider.tsx:39
 msgid "Cancel"
-msgstr ""
+msgstr "Annulla"
 
 #: app/settings/import.tsx:78
 msgid "Completed"
-msgstr ""
+msgstr "Completato"
 
 #: src/components/SiteInfo.tsx:101
 msgid "Confirm deletion"
-msgstr ""
+msgstr "Conferma l'eliminazione"
 
 #: src/components/SiteInfo.tsx:91
 msgid "Delete"
-msgstr ""
+msgstr "Elimina"
 
 #: src/providers/FingerprintAuthProvider.tsx:107
 msgid "Enable"
-msgstr ""
+msgstr "Abilitare"
 
 #: src/components/SitesList.tsx:63
 msgid "Everything is prepared for you to add your sites"
-msgstr ""
+msgstr "Tutto è pronto per aggiungere i tuoi siti"
 
 #: src/providers/FingerprintAuthProvider.tsx:97
 msgid "Fingerprint authentication"
-msgstr ""
+msgstr "Autenticazione delle impronte digitali"
 
 #: app/settings/export.tsx:73
 msgid "Generate file"
-msgstr ""
+msgstr "Genera file"
 
 #: app/settings/import.tsx:63
 msgid "If you want to restore your saved sites from a backup, you can load the file stored on your device. It's important to note that the existing sites will remain unchanged and won't be replaced"
-msgstr ""
+msgstr "Se si desidera ripristinare i siti salvati da un backup, è possibile caricare il file memorizzato sul dispositivo. È importante notare che i siti esistenti rimarranno invariati e non verranno sostituiti"
 
 #: app/settings/import.tsx:99
 msgid "Load backup sites"
-msgstr ""
+msgstr "Carica siti di backup"
 
 #: src/providers/FingerprintAuthProvider.tsx:87
 #~ msgid "Login"
@@ -74,15 +74,15 @@ msgstr ""
 
 #: src/providers/FingerprintAuthProvider.tsx:37
 msgid "Login with your fingerprint"
-msgstr ""
+msgstr "Accedi con la tua impronta digitale"
 
 #: app/qr/index.tsx:48
 msgid "No access to camera"
-msgstr ""
+msgstr "Nessun accesso alla fotocamera"
 
 #: src/components/SitesList.tsx:93
 msgid "No results matching your search"
-msgstr ""
+msgstr "Nessun risultato corrispondente alla tua ricerca"
 
 #: app/(home)/index.tsx:45
 #~ msgid "No sites have been added yet"
@@ -90,49 +90,49 @@ msgstr ""
 
 #: app/settings/import.tsx:77
 msgid "Processing"
-msgstr ""
+msgstr "Elaborazione"
 
 #: app/qr/index.tsx:41
 msgid "Requesting for camera permission"
-msgstr ""
+msgstr "Richiesta di autorizzazione della fotocamera"
 
 #: app/settings/import.tsx:60
 #: src/components/TopBar.tsx:41
 msgid "Restore sites"
-msgstr ""
+msgstr "Ripristina siti"
 
 #: app/qr/index.tsx:88
 msgid "Scan QR code"
-msgstr ""
+msgstr "Scansione codice QR"
 
 #: app/qr/info.tsx:62
 msgid "Scan another code"
-msgstr ""
+msgstr "Scansiona un altro codice"
 
 #: app/qr/index.tsx:60
 msgid "Scan your website's 2FA QR code using your device's camera"
-msgstr ""
+msgstr "Scansiona il codice QR 2FA del tuo sito Web utilizzando la fotocamera del tuo dispositivo"
 
 #: src/components/SitesList.tsx:80
 msgid "Search..."
-msgstr ""
+msgstr "Ricerca..."
 
 #: src/providers/FingerprintAuthProvider.tsx:100
 msgid "Secure the access to your stored 2FA using your device fingerprint authentication"
-msgstr ""
+msgstr "Proteggi l'accesso al 2FA memorizzato utilizzando l'autenticazione delle impronte digitali del dispositivo"
 
 #: app/qr/index.tsx:74
 msgid "The QR code can be easily recognized by simply pointing your device's camera at it"
-msgstr ""
+msgstr "Il codice QR può essere facilmente riconosciuto semplicemente puntando la fotocamera del dispositivo verso di esso"
 
 #: app/settings/export.tsx:61
 msgid "To ensure that you don't lose your saved data, you can download a file of the sites and restore them at a later time"
-msgstr ""
+msgstr "Per assicurarti di non perdere i dati salvati, puoi scaricare un file dei siti e ripristinarli in un secondo momento"
 
 #: src/components/CopyToClipboard.tsx:19
 msgid "Token copied to clipboard"
-msgstr ""
+msgstr "Token copiato negli Appunti"
 
 #: app/settings/import.tsx:84
 msgid "{sitesProcessed, plural, one {Processed 1 site of {numberOfSites}} other {Processed # sites of {numberOfSites}}}"
-msgstr ""
+msgstr "{sitesProcessed, plural, one {1 sito elaborato di {numberOfSites}} other {# siti trasformati di {numberOfSites}}}"

@@ -10,7 +10,7 @@ export type OtpRecord = {
   issuer?: string;
 };
 
-export const Locales = ['en', 'es'] as const;
+export const Locales = ['en', 'es', 'fr', 'it', 'de', 'zh', 'ar'] as const;
 export type Locale = (typeof Locales)[number];
 export type LocaleData = {
   plurals: (n: number | string, ord?: boolean) => string;

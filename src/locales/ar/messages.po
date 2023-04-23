@@ -16,7 +16,7 @@ msgstr ""
 #: app/qr/index.tsx:57
 #: src/components/AddSite.tsx:14
 msgid "Add a new site"
-msgstr ""
+msgstr "أضف موقعًا جديدًا"
 
 #: src/components/AddSite.tsx:14
 #~ msgid "Add site"
@@ -25,48 +25,48 @@ msgstr ""
 #: app/settings/export.tsx:58
 #: src/components/TopBar.tsx:36
 msgid "Backup your data"
-msgstr ""
+msgstr "النسخ الاحتياطي لبياناتك"
 
 #: src/components/SiteInfo.tsx:79
 #: src/providers/FingerprintAuthProvider.tsx:39
 msgid "Cancel"
-msgstr ""
+msgstr "إلغاء"
 
 #: app/settings/import.tsx:78
 msgid "Completed"
-msgstr ""
+msgstr "مكتمل"
 
 #: src/components/SiteInfo.tsx:101
 msgid "Confirm deletion"
-msgstr ""
+msgstr "تأكيد الحذف"
 
 #: src/components/SiteInfo.tsx:91
 msgid "Delete"
-msgstr ""
+msgstr "حذف"
 
 #: src/providers/FingerprintAuthProvider.tsx:107
 msgid "Enable"
-msgstr ""
+msgstr "تمكين"
 
 #: src/components/SitesList.tsx:63
 msgid "Everything is prepared for you to add your sites"
-msgstr ""
+msgstr "كل شيء جاهز لإضافة مواقعك"
 
 #: src/providers/FingerprintAuthProvider.tsx:97
 msgid "Fingerprint authentication"
-msgstr ""
+msgstr "مصادقة بصمات الأصابع"
 
 #: app/settings/export.tsx:73
 msgid "Generate file"
-msgstr ""
+msgstr "إنشاء ملف"
 
 #: app/settings/import.tsx:63
 msgid "If you want to restore your saved sites from a backup, you can load the file stored on your device. It's important to note that the existing sites will remain unchanged and won't be replaced"
-msgstr ""
+msgstr "إذا كنت ترغب في استعادة المواقع المحفوظة من نسخة احتياطية ، يمكنك تحميل الملف المخزن على جهازك. من المهم ملاحظة أن المواقع الحالية ستبقى دون تغيير ولن يتم استبدالها"
 
 #: app/settings/import.tsx:99
 msgid "Load backup sites"
-msgstr ""
+msgstr "تحميل مواقع النسخ الاحتياطي"
 
 #: src/providers/FingerprintAuthProvider.tsx:87
 #~ msgid "Login"
@@ -74,15 +74,15 @@ msgstr ""
 
 #: src/providers/FingerprintAuthProvider.tsx:37
 msgid "Login with your fingerprint"
-msgstr ""
+msgstr "تسجيل الدخول ببصمة إصبعك"
 
 #: app/qr/index.tsx:48
 msgid "No access to camera"
-msgstr ""
+msgstr "لا يمكن الوصول إلى الكاميرا"
 
 #: src/components/SitesList.tsx:93
 msgid "No results matching your search"
-msgstr ""
+msgstr "لا توجد نتائج مطابقة لبحثك"
 
 #: app/(home)/index.tsx:45
 #~ msgid "No sites have been added yet"
@@ -90,49 +90,49 @@ msgstr ""
 
 #: app/settings/import.tsx:77
 msgid "Processing"
-msgstr ""
+msgstr "معالجة"
 
 #: app/qr/index.tsx:41
 msgid "Requesting for camera permission"
-msgstr ""
+msgstr "طلب إذن الكاميرا"
 
 #: app/settings/import.tsx:60
 #: src/components/TopBar.tsx:41
 msgid "Restore sites"
-msgstr ""
+msgstr "استعادة المواقع"
 
 #: app/qr/index.tsx:88
 msgid "Scan QR code"
-msgstr ""
+msgstr "مسح رمز QR"
 
 #: app/qr/info.tsx:62
 msgid "Scan another code"
-msgstr ""
+msgstr "مسح رمز آخر"
 
 #: app/qr/index.tsx:60
 msgid "Scan your website's 2FA QR code using your device's camera"
-msgstr ""
+msgstr "امسح رمز QR 2FA لموقع الويب الخاص بك باستخدام كاميرا جهازك"
 
 #: src/components/SitesList.tsx:80
 msgid "Search..."
-msgstr ""
+msgstr "بحث..."
 
 #: src/providers/FingerprintAuthProvider.tsx:100
 msgid "Secure the access to your stored 2FA using your device fingerprint authentication"
-msgstr ""
+msgstr "تأمين الوصول إلى 2FA المخزن باستخدام مصادقة بصمات جهازك"
 
 #: app/qr/index.tsx:74
 msgid "The QR code can be easily recognized by simply pointing your device's camera at it"
-msgstr ""
+msgstr "يمكن التعرف على رمز الاستجابة السريعة بسهولة بمجرد توجيه كاميرا جهازك إليه"
 
 #: app/settings/export.tsx:61
 msgid "To ensure that you don't lose your saved data, you can download a file of the sites and restore them at a later time"
-msgstr ""
+msgstr "للتأكد من عدم فقدان البيانات المحفوظة ، يمكنك تنزيل ملف من المواقع واستعادتها في وقت لاحق"
 
 #: src/components/CopyToClipboard.tsx:19
 msgid "Token copied to clipboard"
-msgstr ""
+msgstr "تم نسخ الرمز المميز إلى الحافظة"
 
 #: app/settings/import.tsx:84
 msgid "{sitesProcessed, plural, one {Processed 1 site of {numberOfSites}} other {Processed # sites of {numberOfSites}}}"
-msgstr ""
+msgstr "{sitesProcessed, plural, one {موقع 1 معالج لـ {numberOfSites}} other {المواقع # المجهزة لـ {numberOfSites}}}"

@@ -1,7 +1,7 @@
 import { LocaleData, i18n } from '@lingui/core';
 import { I18nProvider } from '@lingui/react';
 import { getLocales } from 'expo-localization';
-import { en, es } from 'make-plural';
+import { en, es, ar, zh, it, de, fr } from 'make-plural';
 import React, {
   FC,
   createContext,
@@ -11,6 +11,11 @@ import React, {
 } from 'react';
 import { messages as messagesEn } from '../locales/en/messages';
 import { messages as messagesEs } from '../locales/es/messages';
+import { messages as messagesFr } from '../locales/fr/messages';
+import { messages as messagesDe } from '../locales/de/messages';
+import { messages as messagesIt } from '../locales/it/messages';
+import { messages as messagesAr } from '../locales/ar/messages';
+import { messages as messagesZh } from '../locales/zh/messages';
 import { ComponentWithChildren, Locale, Locales } from '../types';
 
 export interface LocaleContextInterface {
@@ -22,16 +27,29 @@ export const defaultLocale: Locale = 'en';
 export const messages: Record<Locale, any> = {
   en: messagesEn,
   es: messagesEs,
+  fr: messagesFr,
+  ar: messagesAr,
+  it: messagesIt,
+  de: messagesDe,
+  zh: messagesZh,
 };
 
 const localeData: Record<Locale, LocaleData> = {
   en: { plurals: en },
   es: { plurals: es },
+  ar: { plurals: ar },
+  zh: { plurals: zh },
+  fr: { plurals: fr },
+  it: { plurals: it },
+  de: { plurals: de },
 };
 
-i18n.loadLocaleData(defaultLocale, localeData[defaultLocale]);
-i18n.load(defaultLocale, messages[defaultLocale]);
-i18n.activate(defaultLocale);
+const loadLanguage = (locale: Locale) => {
+  i18n.loadLocaleData(locale, localeData[locale]);
+  i18n.load(locale, messages[locale]);
+  i18n.activate(locale);
+};
+loadLanguage(defaultLocale);
 
 const initialLocaleContext = {
   locale: defaultLocale,
@@ -53,6 +71,7 @@ const LocalizationProvider: FC<ComponentWithChildren> = ({ children }) => {
       Locales.includes(l.languageCode as Locale),
     )?.languageCode as Locale;
     setLocale(locale);
+    loadLanguage(locale);
   }, []);
 
   return (
