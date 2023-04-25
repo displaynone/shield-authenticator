@@ -1,8 +1,13 @@
+![](./docs/app_store.svg)
+
+[![](./docs/google_play.svg)](https://play.google.com/store/apps/details?id=com.displaynone.timepass)
+
 # Shield Authenticator
 
 An open source TOTP (Time-based One Time Password) Android app.
 
 ![](./docs/logo.png)
+
 
 ## What is TOTP
 
