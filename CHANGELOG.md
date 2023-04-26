@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.11.0](https://github.com/displaynone/shield-authenticator/compare/v1.10.0...v1.11.0) (2023-04-26)
+
+
+### Features
+
+* added back button ([5368b16](https://github.com/displaynone/shield-authenticator/commit/5368b16da00782ec737a0ca972cccd73c7bece63))
+
+
+### Bug Fixes
+
+* handled camera permission denied ([689f1d2](https://github.com/displaynone/shield-authenticator/commit/689f1d237a661743dde7f0d65c85984862e5f703))
+* rtl texts ([397c875](https://github.com/displaynone/shield-authenticator/commit/397c8755f32390931efe752c66ef278c18075d1d))
+
 ## [1.10.0](https://github.com/displaynone/shield-authenticator/compare/v1.9.0...v1.10.0) (2023-04-23)
 
 
