@@ -4,12 +4,13 @@ import { useRouter } from 'expo-router';
 import React, { FC, useEffect, useState } from 'react';
 import { Dimensions, StyleSheet, View } from 'react-native';
 import { parseOtpUri } from '../../src/util/parseOtpUri';
-import { Trans } from '@lingui/macro';
+import { Trans, t } from '@lingui/macro';
 import colors from '../../src/constants/colors';
 import { Button, MD3Theme, useTheme } from 'react-native-paper';
 import Text from '../../src/ui/Text';
 import { ScanQRIcon } from '../../src/icons/ScanQR';
 import Container from '../../src/ui/Container';
+import Section from '../../src/components/Section';
 
 const CAMERA_WIDTH = Dimensions.get('screen').width - 2 * 20;
 
@@ -51,56 +52,46 @@ const QRScanner: FC = () => {
   }
 
   return (
-    <Container>
-      <View style={styles.container}>
-        <Text size="headlineSmall" variant={['bold', 'primary']}>
-          <Trans>Add a new site</Trans>
-        </Text>
-        <Text size="bodyLarge" variant={'secondary'} numberOfLines={2}>
-          <Trans>
-            Scan your website's 2FA QR code using your device's camera
-          </Trans>
-        </Text>
-        {showCamera && (
-          <>
-            <View style={styles.cameraContainer}>
-              <Camera
-                onBarCodeScanned={handleBarCodeScanned}
-                style={styles.camera}
-                ratio="1:1"
-              />
-            </View>
-            <Text size="bodyMedium" variant={'secondary'} numberOfLines={2}>
-              <Trans>
-                The QR code can be easily recognized by simply pointing your
-                device's camera at it
-              </Trans>
-            </Text>
-          </>
-        )}
-        {!showCamera && (
-          <>
-            <ScanQRIcon
-              width={Dimensions.get('screen').width - 48}
-              height={Dimensions.get('screen').width - 48}
+    <Section title={t`Add a new site`} showBack>
+      <Text size="bodyLarge" variant={'secondary'} numberOfLines={2}>
+        <Trans>
+          Scan your website's 2FA QR code using your device's camera
+        </Trans>
+      </Text>
+      {showCamera && (
+        <>
+          <View style={styles.cameraContainer}>
+            <Camera
+              onBarCodeScanned={handleBarCodeScanned}
+              style={styles.camera}
+              ratio="1:1"
             />
-            <Button mode="contained" onPress={() => setShowCamera(true)}>
-              <Trans>Scan QR code</Trans>
-            </Button>
-          </>
-        )}
-      </View>
-    </Container>
+          </View>
+          <Text size="bodyMedium" variant={'secondary'} numberOfLines={2}>
+            <Trans>
+              The QR code can be easily recognized by simply pointing your
+              device's camera at it
+            </Trans>
+          </Text>
+        </>
+      )}
+      {!showCamera && (
+        <>
+          <ScanQRIcon
+            width={Dimensions.get('screen').width - 48}
+            height={Dimensions.get('screen').width - 48}
+          />
+          <Button mode="contained" onPress={() => setShowCamera(true)}>
+            <Trans>Scan QR code</Trans>
+          </Button>
+        </>
+      )}
+    </Section>
   );
 };
 
 const getStyles = (theme: MD3Theme) =>
   StyleSheet.create({
-    container: {
-      flex: 1,
-      padding: 0,
-      margin: 0,
-    },
     camera: {
       width: '100%',
       aspectRatio: 1,

@@ -1,4 +1,4 @@
-import { Trans } from '@lingui/macro';
+import { Trans, t } from '@lingui/macro';
 import * as FileSystem from 'expo-file-system';
 import * as Sharing from 'expo-sharing';
 import React, { FC } from 'react';
@@ -10,6 +10,7 @@ import { useDB } from '../../src/providers/DatabaseProvider';
 import Container from '../../src/ui/Container';
 import Text from '../../src/ui/Text';
 import { format } from 'date-fns';
+import Section from '../../src/components/Section';
 
 const SettingsExport: FC = () => {
   const { listSites } = useDB();
@@ -52,39 +53,29 @@ const SettingsExport: FC = () => {
   };
 
   return (
-    <Container>
-      <View style={styles.container}>
-        <Text size="headlineSmall" variant={['bold', 'primary']}>
-          <Trans>Backup your data</Trans>
-        </Text>
-        <Text size="bodyLarge" variant={'secondary'} numberOfLines={3}>
-          <Trans>
-            To ensure that you don't lose your saved data, you can download a
-            file of the sites and restore them at a later time
-          </Trans>
-        </Text>
+    <Section title={t`Backup your data`} showBack>
+      <Text size="bodyLarge" variant={'secondary'} numberOfLines={3}>
+        <Trans>
+          To ensure that you don't lose your saved data, you can download a file
+          of the sites and restore them at a later time
+        </Trans>
+      </Text>
 
-        <ExportIcon
-          width={Dimensions.get('screen').width - 48}
-          height={Dimensions.get('screen').width - 48}
-        />
-        <View style={styles.buttonContainer}>
-          <Button mode="contained" onPress={() => downloadStringAsFile()}>
-            <Trans>Generate file</Trans>
-          </Button>
-        </View>
+      <ExportIcon
+        width={Dimensions.get('screen').width - 48}
+        height={Dimensions.get('screen').width - 48}
+      />
+      <View style={styles.buttonContainer}>
+        <Button mode="contained" onPress={() => downloadStringAsFile()}>
+          <Trans>Generate file</Trans>
+        </Button>
       </View>
-    </Container>
+    </Section>
   );
 };
 
 const getStyles = (theme: MD3Theme) =>
   StyleSheet.create({
-    container: {
-      flex: 1,
-      padding: 0,
-      margin: 0,
-    },
     buttonContainer: {
       marginTop: 24,
     },

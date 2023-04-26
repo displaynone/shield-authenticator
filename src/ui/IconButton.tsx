@@ -1,5 +1,5 @@
 import { FC, useState } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleProp, StyleSheet, View, ViewStyle } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { MD3Theme, useTheme } from 'react-native-paper';
 import { ComponentWithChildren } from '../types';
@@ -7,11 +7,13 @@ import colors from '../constants/colors';
 
 type IconButtonProps = {
   onPress: () => void;
+  style?: StyleProp<ViewStyle>;
 };
 
 const IconButton: FC<ComponentWithChildren & IconButtonProps> = ({
   children,
   onPress,
+  style,
 }) => {
   const theme = useTheme();
   const styles = getStyles(theme);
@@ -24,7 +26,11 @@ const IconButton: FC<ComponentWithChildren & IconButtonProps> = ({
       onPress={() => onPress()}
     >
       <View
-        style={[styles.button, isPressing ? styles.pressing : styles.regular]}
+        style={[
+          styles.button,
+          isPressing ? styles.pressing : styles.regular,
+          style,
+        ]}
       >
         {children}
       </View>
