@@ -1,18 +1,21 @@
+import { Trans, t } from '@lingui/macro';
 import { BarCodeEvent, BarCodeScanner } from 'expo-barcode-scanner';
 import { Camera } from 'expo-camera';
 import { useRouter } from 'expo-router';
 import React, { FC, useEffect, useState } from 'react';
-import { Dimensions, StyleSheet, View } from 'react-native';
-import { parseOtpUri } from '../../src/util/parseOtpUri';
-import { Trans, t } from '@lingui/macro';
-import colors from '../../src/constants/colors';
-import { Button, MD3Theme, useTheme } from 'react-native-paper';
-import Text from '../../src/ui/Text';
-import { ScanQRIcon } from '../../src/icons/ScanQR';
-import Container from '../../src/ui/Container';
+import { Dimensions, Linking, StyleSheet, View } from 'react-native';
+import {
+  ActivityIndicator,
+  Button,
+  MD3Theme,
+  useTheme,
+} from 'react-native-paper';
 import Section from '../../src/components/Section';
-
-const CAMERA_WIDTH = Dimensions.get('screen').width - 2 * 20;
+import colors from '../../src/constants/colors';
+import { CameraPermissionIcon } from '../../src/icons/CameraPermission';
+import { ScanQRIcon } from '../../src/icons/ScanQR';
+import Text from '../../src/ui/Text';
+import { parseOtpUri } from '../../src/util/parseOtpUri';
 
 const QRScanner: FC = () => {
   const [hasPermission, setHasPermission] = useState<boolean>();
@@ -20,12 +23,13 @@ const QRScanner: FC = () => {
   const { push } = useRouter();
   const theme = useTheme();
   const styles = getStyles(theme);
-  useEffect(() => {
-    const getBarCodeScannerPermissions = async () => {
-      const { status } = await BarCodeScanner.requestPermissionsAsync();
-      setHasPermission(status === 'granted');
-    };
 
+  const getBarCodeScannerPermissions = async () => {
+    const { status } = await BarCodeScanner.requestPermissionsAsync();
+    setHasPermission(status === 'granted');
+  };
+
+  useEffect(() => {
     getBarCodeScannerPermissions();
   }, []);
 
@@ -36,18 +40,39 @@ const QRScanner: FC = () => {
     }
   };
 
-  if (hasPermission === null) {
-    return (
-      <Text>
-        <Trans>Requesting for camera permission</Trans>
-      </Text>
-    );
+  const resetPermissions = () => {
+    Linking.openSettings();
+  };
+
+  if (hasPermission === undefined) {
+    return <ActivityIndicator />;
   }
+
   if (hasPermission === false) {
     return (
-      <Text>
-        <Trans>No access to camera</Trans>
-      </Text>
+      <Section title={t`Add a new site`} showBack>
+        <Text size="titleLarge" variant={['primary', 'bold']} numberOfLines={5}>
+          <Trans>No access to camera</Trans>
+        </Text>
+        <CameraPermissionIcon
+          width={Dimensions.get('screen').width - 48}
+          height={Dimensions.get('screen').width - 48}
+        />
+        <View style={styles.divider}>
+          <Text size="bodyLarge" variant={'secondary'} numberOfLines={4}>
+            <Trans>
+              Access to the camera was denied. To enable Shield Authenticator to
+              utilize the camera, it is necessary to provide permission through
+              the settings
+            </Trans>
+          </Text>
+        </View>
+        <View style={styles.divider}>
+          <Button mode="contained" onPress={() => resetPermissions()}>
+            <Trans>Enable camera</Trans>
+          </Button>
+        </View>
+      </Section>
     );
   }
 
@@ -102,6 +127,9 @@ const getStyles = (theme: MD3Theme) =>
       padding: 16,
       borderRadius: theme.roundness,
       marginBottom: 24,
+    },
+    divider: {
+      marginTop: 24,
     },
   });
 

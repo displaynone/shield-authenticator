@@ -11,7 +11,7 @@
     "android": "expo run:android",
     "format": "prettier --write '**/*.js'",
     "test": "jest",
-    "lingui:extract": "lingui extract",
+    "lingui:extract": "lingui extract --clean",
     "lingui:compile": "lingui compile",
     "prepare": "husky install",
     "lint": "eslint ./ --ext ts,tsx --fix",

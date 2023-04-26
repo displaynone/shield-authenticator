@@ -13,16 +13,17 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: app/qr/index.tsx:57
+#: app/qr/index.tsx:63
+msgid "Access to the camera was denied. To enable Shield Authenticator to utilize the camera, it is necessary to provide permission through the settings"
+msgstr "无法访问相机。为了使Shield Authenticator能够使用相机,有必要通过设置提供许可"
+
+#: app/qr/index.tsx:53
+#: app/qr/index.tsx:80
 #: src/components/AddSite.tsx:14
 msgid "Add a new site"
 msgstr "添加新网站"
 
-#: src/components/AddSite.tsx:14
-#~ msgid "Add site"
-#~ msgstr ""
-
-#: app/settings/export.tsx:58
+#: app/settings/export.tsx:56
 #: src/components/TopBar.tsx:36
 msgid "Backup your data"
 msgstr "备份数据"
@@ -32,7 +33,7 @@ msgstr "备份数据"
 msgid "Cancel"
 msgstr "取消"
 
-#: app/settings/import.tsx:78
+#: app/settings/import.tsx:75
 msgid "Completed"
 msgstr "已完成"
 
@@ -48,6 +49,10 @@ msgstr "删除"
 msgid "Enable"
 msgstr "启用"
 
+#: app/qr/index.tsx:72
+msgid "Enable camera"
+msgstr "启用相机"
+
 #: src/components/SitesList.tsx:63
 msgid "Everything is prepared for you to add your sites"
 msgstr "一切准备就绪,您可以添加网站"
@@ -56,27 +61,23 @@ msgstr "一切准备就绪,您可以添加网站"
 msgid "Fingerprint authentication"
 msgstr "指纹认证"
 
-#: app/settings/export.tsx:73
+#: app/settings/export.tsx:70
 msgid "Generate file"
 msgstr "生成文件"
 
-#: app/settings/import.tsx:63
+#: app/settings/import.tsx:60
 msgid "If you want to restore your saved sites from a backup, you can load the file stored on your device. It's important to note that the existing sites will remain unchanged and won't be replaced"
 msgstr "如果要从备份还原保存的站点,则可以加载存储在设备上的文件。重要的是要注意,现有站点将保持不变并且不会被替换"
 
-#: app/settings/import.tsx:99
+#: app/settings/import.tsx:96
 msgid "Load backup sites"
 msgstr "加载备份站点"
-
-#: src/providers/FingerprintAuthProvider.tsx:87
-#~ msgid "Login"
-#~ msgstr ""
 
 #: src/providers/FingerprintAuthProvider.tsx:37
 msgid "Login with your fingerprint"
 msgstr "用指纹登录"
 
-#: app/qr/index.tsx:48
+#: app/qr/index.tsx:55
 msgid "No access to camera"
 msgstr "无法使用相机"
 
@@ -84,24 +85,16 @@ msgstr "无法使用相机"
 msgid "No results matching your search"
 msgstr "没有符合您搜索结果的结果"
 
-#: app/(home)/index.tsx:45
-#~ msgid "No sites have been added yet"
-#~ msgstr ""
-
-#: app/settings/import.tsx:77
+#: app/settings/import.tsx:74
 msgid "Processing"
 msgstr "处理"
 
-#: app/qr/index.tsx:41
-msgid "Requesting for camera permission"
-msgstr "要求相机许可"
-
-#: app/settings/import.tsx:60
+#: app/settings/import.tsx:58
 #: src/components/TopBar.tsx:41
 msgid "Restore sites"
 msgstr "恢复网站"
 
-#: app/qr/index.tsx:88
+#: app/qr/index.tsx:110
 msgid "Scan QR code"
 msgstr "扫描QR码"
 
@@ -109,7 +102,7 @@ msgstr "扫描QR码"
 msgid "Scan another code"
 msgstr "扫描另一个代码"
 
-#: app/qr/index.tsx:60
+#: app/qr/index.tsx:82
 msgid "Scan your website's 2FA QR code using your device's camera"
 msgstr "使用设备的相机扫描网站的2FA QR码"
 
@@ -121,11 +114,11 @@ msgstr "搜索..."
 msgid "Secure the access to your stored 2FA using your device fingerprint authentication"
 msgstr "使用设备指纹身份验证确保对存储的2FA的访问"
 
-#: app/qr/index.tsx:74
+#: app/qr/index.tsx:96
 msgid "The QR code can be easily recognized by simply pointing your device's camera at it"
 msgstr "只需将设备的相机对准它,即可轻松识别QR码"
 
-#: app/settings/export.tsx:61
+#: app/settings/export.tsx:58
 msgid "To ensure that you don't lose your saved data, you can download a file of the sites and restore them at a later time"
 msgstr "为确保您不会丢失保存的数据,您可以下载站点文件并在以后还原它们"
 
@@ -133,6 +126,6 @@ msgstr "为确保您不会丢失保存的数据,您可以下载站点文件并�
 msgid "Token copied to clipboard"
 msgstr "令牌复制到剪贴板"
 
-#: app/settings/import.tsx:84
+#: app/settings/import.tsx:81
 msgid "{sitesProcessed, plural, one {Processed 1 site of {numberOfSites}} other {Processed # sites of {numberOfSites}}}"
 msgstr "{sitesProcessed, plural, one {处理了 {numberOfSites} 个网站} other {处理了 {numberOfSites} 个网站}}"

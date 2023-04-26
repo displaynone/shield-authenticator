@@ -32,7 +32,7 @@ const Section: FC<SectionProps> = ({ children, title, showBack }) => {
             )}
           </View>
           <Text size="headlineSmall" variant={['bold', 'primary']}>
-            <Trans>{title}</Trans>
+            {title}
           </Text>
         </View>
         <View style={styles.wrapper}>{children}</View>
