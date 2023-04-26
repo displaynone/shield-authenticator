@@ -13,16 +13,17 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: app/qr/index.tsx:57
+#: app/qr/index.tsx:63
+msgid "Access to the camera was denied. To enable Shield Authenticator to utilize the camera, it is necessary to provide permission through the settings"
+msgstr "L'accès à la caméra a été refusé. Pour permettre à Shield Authenticator d'utiliser la caméra, il est nécessaire de fournir une autorisation via les paramètres"
+
+#: app/qr/index.tsx:53
+#: app/qr/index.tsx:80
 #: src/components/AddSite.tsx:14
 msgid "Add a new site"
 msgstr "Ajouter un nouveau site"
 
-#: src/components/AddSite.tsx:14
-#~ msgid "Add site"
-#~ msgstr ""
-
-#: app/settings/export.tsx:58
+#: app/settings/export.tsx:56
 #: src/components/TopBar.tsx:36
 msgid "Backup your data"
 msgstr "Sauvegardez vos données"
@@ -32,7 +33,7 @@ msgstr "Sauvegardez vos données"
 msgid "Cancel"
 msgstr "Annuler"
 
-#: app/settings/import.tsx:78
+#: app/settings/import.tsx:75
 msgid "Completed"
 msgstr "Terminé"
 
@@ -48,6 +49,10 @@ msgstr "Supprimer"
 msgid "Enable"
 msgstr "Activer"
 
+#: app/qr/index.tsx:72
+msgid "Enable camera"
+msgstr "Activer la caméra"
+
 #: src/components/SitesList.tsx:63
 msgid "Everything is prepared for you to add your sites"
 msgstr "Tout est préparé pour que vous ajoutiez vos sites"
@@ -56,27 +61,23 @@ msgstr "Tout est préparé pour que vous ajoutiez vos sites"
 msgid "Fingerprint authentication"
 msgstr "Authentification des empreintes digitales"
 
-#: app/settings/export.tsx:73
+#: app/settings/export.tsx:70
 msgid "Generate file"
 msgstr "Générer un fichier"
 
-#: app/settings/import.tsx:63
+#: app/settings/import.tsx:60
 msgid "If you want to restore your saved sites from a backup, you can load the file stored on your device. It's important to note that the existing sites will remain unchanged and won't be replaced"
 msgstr "Si vous souhaitez restaurer vos sites enregistrés à partir d'une sauvegarde, vous pouvez charger le fichier stocké sur votre appareil. Il est important de noter que les sites existants resteront inchangés et ne seront pas remplacés"
 
-#: app/settings/import.tsx:99
+#: app/settings/import.tsx:96
 msgid "Load backup sites"
 msgstr "Charger des sites de sauvegarde"
-
-#: src/providers/FingerprintAuthProvider.tsx:87
-#~ msgid "Login"
-#~ msgstr ""
 
 #: src/providers/FingerprintAuthProvider.tsx:37
 msgid "Login with your fingerprint"
 msgstr "Connectez-vous avec votre empreinte digitale"
 
-#: app/qr/index.tsx:48
+#: app/qr/index.tsx:55
 msgid "No access to camera"
 msgstr "Pas d'accès à la caméra"
 
@@ -84,24 +85,16 @@ msgstr "Pas d'accès à la caméra"
 msgid "No results matching your search"
 msgstr "Aucun résultat correspondant à votre recherche"
 
-#: app/(home)/index.tsx:45
-#~ msgid "No sites have been added yet"
-#~ msgstr ""
-
-#: app/settings/import.tsx:77
+#: app/settings/import.tsx:74
 msgid "Processing"
 msgstr "Traitement"
 
-#: app/qr/index.tsx:41
-msgid "Requesting for camera permission"
-msgstr "Demande d'autorisation de caméra"
-
-#: app/settings/import.tsx:60
+#: app/settings/import.tsx:58
 #: src/components/TopBar.tsx:41
 msgid "Restore sites"
 msgstr "Restaurer des sites"
 
-#: app/qr/index.tsx:88
+#: app/qr/index.tsx:110
 msgid "Scan QR code"
 msgstr "Numériser le code QR"
 
@@ -109,7 +102,7 @@ msgstr "Numériser le code QR"
 msgid "Scan another code"
 msgstr "Analyser un autre code"
 
-#: app/qr/index.tsx:60
+#: app/qr/index.tsx:82
 msgid "Scan your website's 2FA QR code using your device's camera"
 msgstr "Analysez le code QR 2FA de votre site Web à l'aide de la caméra de votre appareil"
 
@@ -121,11 +114,11 @@ msgstr "Recherche..."
 msgid "Secure the access to your stored 2FA using your device fingerprint authentication"
 msgstr "Fixez l'accès à votre 2FA stocké à l'aide de l'authentification des empreintes digitales de votre appareil"
 
-#: app/qr/index.tsx:74
+#: app/qr/index.tsx:96
 msgid "The QR code can be easily recognized by simply pointing your device's camera at it"
 msgstr "Le code QR peut être facilement reconnu en pointant simplement la caméra de votre appareil vers celui-ci"
 
-#: app/settings/export.tsx:61
+#: app/settings/export.tsx:58
 msgid "To ensure that you don't lose your saved data, you can download a file of the sites and restore them at a later time"
 msgstr "Pour vous assurer de ne pas perdre vos données enregistrées, vous pouvez télécharger un fichier des sites et les restaurer ultérieurement"
 
@@ -133,6 +126,6 @@ msgstr "Pour vous assurer de ne pas perdre vos données enregistrées, vous pouv
 msgid "Token copied to clipboard"
 msgstr "Jeton copié dans le presse-papiers"
 
-#: app/settings/import.tsx:84
+#: app/settings/import.tsx:81
 msgid "{sitesProcessed, plural, one {Processed 1 site of {numberOfSites}} other {Processed # sites of {numberOfSites}}}"
 msgstr "{sitesProcessed, plural, one {Site traité 1 de {numberOfSites}} other {Sites transformés # de {numberOfSites}}}"
