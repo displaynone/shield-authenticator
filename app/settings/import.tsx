@@ -1,4 +1,4 @@
-import { Plural, Trans } from '@lingui/macro';
+import { Plural, Trans, t } from '@lingui/macro';
 import * as FileSystem from 'expo-file-system';
 import * as Sharing from 'expo-sharing';
 import React, { FC, useState } from 'react';
@@ -11,6 +11,7 @@ import Container from '../../src/ui/Container';
 import Text from '../../src/ui/Text';
 import * as DocumentPicker from 'expo-document-picker';
 import { OtpRecord } from '../../src/types';
+import Section from '../../src/components/Section';
 
 const SettingsImport: FC = () => {
   const { newSite } = useDB();
@@ -54,64 +55,54 @@ const SettingsImport: FC = () => {
   };
 
   return (
-    <Container>
-      <View style={styles.container}>
-        <Text size="headlineSmall" variant={['bold', 'primary']}>
-          <Trans>Restore sites</Trans>
-        </Text>
-        <Text size="bodyLarge" variant={'secondary'} numberOfLines={5}>
-          <Trans>
-            If you want to restore your saved sites from a backup, you can load
-            the file stored on your device. It's important to note that the
-            existing sites will remain unchanged and won't be replaced
-          </Trans>
-        </Text>
+    <Section title={t`Restore sites`} showBack>
+      <Text size="bodyLarge" variant={'secondary'} numberOfLines={5}>
+        <Trans>
+          If you want to restore your saved sites from a backup, you can load
+          the file stored on your device. It's important to note that the
+          existing sites will remain unchanged and won't be replaced
+        </Trans>
+      </Text>
 
-        <ImportIcon
-          width={Dimensions.get('screen').width - 48}
-          height={Dimensions.get('screen').width - 48}
-        />
-        {processing && (
-          <View style={styles.buttonContainer}>
-            <Text size="labelLarge" variant={['bold', 'primary', 'marginless']}>
-              {sitesProcessed !== numberOfSites && <Trans>Processing</Trans>}
-              {sitesProcessed === numberOfSites && <Trans>Completed</Trans>}
-            </Text>
-            <View style={styles.processContainer}>
-              <ProgressBar progress={0} />
-            </View>
-            <Text>
-              <Plural
-                value={sitesProcessed}
-                one={<Trans>Processed 1 site of {numberOfSites}</Trans>}
-                other={<Trans>Processed # sites of {numberOfSites}</Trans>}
-              />
-            </Text>
+      <ImportIcon
+        width={Dimensions.get('screen').width - 48}
+        height={Dimensions.get('screen').width - 48}
+      />
+      {processing && (
+        <View style={styles.buttonContainer}>
+          <Text size="labelLarge" variant={['bold', 'primary', 'marginless']}>
+            {sitesProcessed !== numberOfSites && <Trans>Processing</Trans>}
+            {sitesProcessed === numberOfSites && <Trans>Completed</Trans>}
+          </Text>
+          <View style={styles.processContainer}>
+            <ProgressBar progress={0} />
           </View>
-        )}
-        {!processing && (
-          <View style={styles.buttonContainer}>
-            <Button
-              mode="contained"
-              onPress={() => loadBackupFile()}
-              disabled={processing}
-            >
-              <Trans>Load backup sites</Trans>
-            </Button>
-          </View>
-        )}
-      </View>
-    </Container>
+          <Text>
+            <Plural
+              value={sitesProcessed}
+              one={<Trans>Processed 1 site of {numberOfSites}</Trans>}
+              other={<Trans>Processed # sites of {numberOfSites}</Trans>}
+            />
+          </Text>
+        </View>
+      )}
+      {!processing && (
+        <View style={styles.buttonContainer}>
+          <Button
+            mode="contained"
+            onPress={() => loadBackupFile()}
+            disabled={processing}
+          >
+            <Trans>Load backup sites</Trans>
+          </Button>
+        </View>
+      )}
+    </Section>
   );
 };
 
 const getStyles = (theme: MD3Theme) =>
   StyleSheet.create({
-    container: {
-      flex: 1,
-      padding: 0,
-      margin: 0,
-    },
     buttonContainer: {
       marginTop: 24,
     },
