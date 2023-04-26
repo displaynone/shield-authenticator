@@ -93,7 +93,7 @@ export const FingerprintAuthProvider: FC<ComponentWithChildren> = ({
     return (
       <Container variant="filled">
         <View style={styles.notEnabled}>
-          <Text size="headlineMedium" variant="secondary">
+          <Text size="headlineMedium" variant="secondary" numberOfLines={2}>
             <Trans>Fingerprint authentication</Trans>
           </Text>
           <Text size="bodyLarge" variant="secondary" numberOfLines={2}>

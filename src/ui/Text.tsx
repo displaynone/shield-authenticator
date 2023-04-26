@@ -1,12 +1,14 @@
 import { FC } from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, TextStyle } from 'react-native';
 import {
   MD3Theme,
   MD3TypescaleKey,
   Text as PaperText,
   useTheme,
 } from 'react-native-paper';
-import { ComponentWithChildren } from '../types';
+import { ComponentWithChildren, TextDirection } from '../types';
+import { useLocaleContext } from '../providers/LocalizationProvider';
+import { text } from '@nozbe/watermelondb/decorators';
 
 const variants = [
   'primary',
@@ -29,8 +31,9 @@ const Text: FC<ComponentWithChildren & TextProps> = ({
   size,
   numberOfLines = 1,
 }) => {
+  const { textDirection } = useLocaleContext();
   const theme = useTheme();
-  const styles = getStyles(theme);
+  const styles = getStyles(theme, textDirection);
 
   const listOfStiles = [variant].flat().map(style => styles[style]);
 
@@ -45,10 +48,12 @@ const Text: FC<ComponentWithChildren & TextProps> = ({
   );
 };
 
-const getStyles = (theme: MD3Theme) =>
+const getStyles = (theme: MD3Theme, textDirection: TextDirection) =>
   StyleSheet.create({
     common: {
       paddingBottom: 24,
+      direction: textDirection as TextStyle['direction'],
+      textAlign: textDirection === 'ltr' ? 'left' : 'right',
     },
     primary: {
       color: theme.colors.primary,
