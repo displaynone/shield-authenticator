@@ -1,9 +1,14 @@
 import { FC, useState } from 'react';
-import { StyleProp, StyleSheet, View, ViewStyle } from 'react-native';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import {
+  Pressable,
+  StyleProp,
+  StyleSheet,
+  View,
+  ViewStyle,
+} from 'react-native';
 import { MD3Theme, useTheme } from 'react-native-paper';
-import { ComponentWithChildren } from '../types';
 import colors from '../constants/colors';
+import { ComponentWithChildren } from '../types';
 
 type IconButtonProps = {
   onPress: () => void;
@@ -19,11 +24,11 @@ const IconButton: FC<ComponentWithChildren & IconButtonProps> = ({
   const styles = getStyles(theme);
   const [isPressing, setIsPressing] = useState(false);
   return (
-    <TouchableOpacity
+    <Pressable
       style={styles.container}
       onPressIn={() => setIsPressing(true)}
       onPressOut={() => setIsPressing(false)}
-      onPress={() => onPress()}
+      onPress={event => onPress()}
     >
       <View
         style={[
@@ -34,7 +39,7 @@ const IconButton: FC<ComponentWithChildren & IconButtonProps> = ({
       >
         {children}
       </View>
-    </TouchableOpacity>
+    </Pressable>
   );
 };
 
@@ -43,14 +48,12 @@ const getStyles = (theme: MD3Theme) =>
     container: {
       alignItems: 'center',
       justifyContent: 'center',
+      zIndex: 100,
     },
     button: {
-      minWidth: 48,
-      width: 48,
-      aspectRatio: 1,
+      backgroundColor: 'cyan',
+      padding: 8,
       borderRadius: theme.roundness,
-      alignItems: 'center',
-      justifyContent: 'center',
     },
     regular: {
       backgroundColor: 'transparent',

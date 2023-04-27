@@ -30,6 +30,7 @@ const TopBar: FC = () => {
             </IconButton>
           }
           style={styles.menu}
+          anchorPosition="bottom"
         >
           <Menu.Item
             onPress={() => push('/settings/export')}
@@ -52,13 +53,15 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
+    zIndex: 1000,
   },
   logo: {
     flexDirection: 'row',
     alignItems: 'center',
+    justifyContent: 'flex-start',
   },
   menu: {
-    marginTop: 48,
+    // marginTop: 48,
   },
 });
 

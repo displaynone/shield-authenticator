@@ -4,8 +4,8 @@ import colors from '../constants/colors';
 import { ComponentWithColor, ComponentWithSize } from '../types';
 
 export const BackIcon: FC<ComponentWithSize & ComponentWithColor> = ({
-  width = 48,
-  height = 48,
+  width = 24,
+  height = 24,
   color = colors.dark,
 }) => {
   return (
@@ -15,7 +15,7 @@ export const BackIcon: FC<ComponentWithSize & ComponentWithColor> = ({
         strokeLinejoin="round"
         d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"
         stroke={color}
-        strokeWidth={2}
+        strokeWidth={1.5}
       />
     </Svg>
   );
