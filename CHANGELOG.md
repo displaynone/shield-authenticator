@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.11.1](https://github.com/displaynone/shield-authenticator/compare/v1.11.0...v1.11.1) (2023-04-27)
+
+
+### Bug Fixes
+
+* heading buttons press surface ([4163763](https://github.com/displaynone/shield-authenticator/commit/4163763bc80938f563cc82e62d0f22df5e089235))
+
 ## [1.11.0](https://github.com/displaynone/shield-authenticator/compare/v1.10.0...v1.11.0) (2023-04-26)
 
 
