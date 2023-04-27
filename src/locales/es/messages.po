@@ -71,7 +71,7 @@ msgstr "Si quieres recuperar tu copia de seguridad, puedes cargar el fichero gua
 
 #: app/settings/import.tsx:96
 msgid "Load backup sites"
-msgstr "Cargar copia de seguridad"
+msgstr "Cargar copia"
 
 #: src/providers/FingerprintAuthProvider.tsx:37
 msgid "Login with your fingerprint"

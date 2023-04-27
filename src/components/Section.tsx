@@ -1,11 +1,10 @@
-import { Trans } from '@lingui/macro';
+import { useNavigation } from 'expo-router';
 import { FC, ReactNode } from 'react';
 import { StyleSheet, View } from 'react-native';
-import Container from '../ui/Container';
-import Text from '../ui/Text';
-import IconButton from '../ui/IconButton';
 import { BackIcon } from '../icons/BackIcon';
-import { useNavigation } from 'expo-router';
+import Container from '../ui/Container';
+import IconButton from '../ui/IconButton';
+import Text from '../ui/Text';
 
 type SectionProps = {
   title: string;
@@ -19,19 +18,20 @@ const Section: FC<SectionProps> = ({ children, title, showBack }) => {
     <Container>
       <View style={styles.container}>
         <View style={styles.head}>
-          <View>
-            {showBack && (
-              <IconButton
-                onPress={() => {
-                  goBack();
-                }}
-                style={styles.button}
-              >
-                <BackIcon width={24} />
-              </IconButton>
-            )}
-          </View>
-          <Text size="headlineSmall" variant={['bold', 'primary']}>
+          {showBack && (
+            <IconButton
+              onPress={() => {
+                goBack();
+              }}
+              style={styles.button}
+            >
+              <BackIcon width={20} />
+            </IconButton>
+          )}
+          <Text
+            size="headlineSmall"
+            variant={['bold', 'primary', 'marginless']}
+          >
             {title}
           </Text>
         </View>
@@ -49,12 +49,14 @@ const styles = StyleSheet.create({
   },
   button: {
     paddingRight: 16,
-    width: 36,
-    minWidth: 20,
+    paddingLeft: 0,
+    paddingTop: 4,
   },
   head: {
     flexDirection: 'row',
     alignContent: 'center',
+    alignItems: 'flex-start',
+    zIndex: 1000,
   },
   wrapper: {
     flexGrow: 1,
