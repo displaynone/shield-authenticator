@@ -117,7 +117,7 @@ const SiteInfo: FC<SiteInfoProps> = ({ site, timer, visible, deleteSite }) => {
             <View style={styles.icon}>
               <IssuerIcon issuer={site.issuer} />
             </View>
-            <View>
+            <View style={styles.text}>
               <Text size="titleSmall" variant={['marginless', 'primary']}>
                 {site.label}
               </Text>
@@ -185,6 +185,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     flexDirection: 'row',
     height: '100%',
+  },
+  text: {
+    flex: 1,
   },
 });
 

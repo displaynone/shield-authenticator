@@ -59,7 +59,9 @@ const QRInfo: FC = () => {
           push('/qr');
         }}
       >
-        <Trans>Scan another code</Trans>
+        <Text>
+          <Trans>Scan another code</Trans>
+        </Text>
       </Button>
     </Container>
   );

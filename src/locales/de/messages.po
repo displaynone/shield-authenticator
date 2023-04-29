@@ -13,21 +13,26 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: app/qr/index.tsx:63
+#: app/qr/index.tsx:92
 msgid "Access to the camera was denied. To enable Shield Authenticator to utilize the camera, it is necessary to provide permission through the settings"
 msgstr "Der Zugang zur Kamera wurde verweigert. Damit Shield Authenticator die Kamera verwenden kann, muss über die Einstellungen eine Berechtigung erteilt werden"
 
-#: app/qr/index.tsx:53
-#: app/qr/index.tsx:80
+#: app/qr/index.tsx:82
+#: app/qr/index.tsx:117
 #: src/components/AddSite.tsx:14
 msgid "Add a new site"
 msgstr "Neue Seite hinzufügen"
 
+#: app/qr/index.tsx:230
+msgid "Add token manually"
+msgstr "Token manuell hinzufügen"
+
 #: app/settings/export.tsx:56
-#: src/components/TopBar.tsx:36
+#: src/components/TopBar.tsx:37
 msgid "Backup your data"
 msgstr "Sichern Sie Ihre Daten"
 
+#: app/qr/index.tsx:146
 #: src/components/SiteInfo.tsx:79
 #: src/providers/FingerprintAuthProvider.tsx:39
 msgid "Cancel"
@@ -49,7 +54,7 @@ msgstr "Löschen"
 msgid "Enable"
 msgstr "Aktivieren"
 
-#: app/qr/index.tsx:72
+#: app/qr/index.tsx:101
 msgid "Enable camera"
 msgstr "Kamera aktivieren"
 
@@ -77,7 +82,7 @@ msgstr "Backup-Sites laden"
 msgid "Login with your fingerprint"
 msgstr "Melden Sie sich mit Ihrem Fingerabdruck an"
 
-#: app/qr/index.tsx:55
+#: app/qr/index.tsx:84
 msgid "No access to camera"
 msgstr "Kein Zugang zur Kamera"
 
@@ -90,21 +95,21 @@ msgid "Processing"
 msgstr "Verarbeitung"
 
 #: app/settings/import.tsx:58
-#: src/components/TopBar.tsx:41
+#: src/components/TopBar.tsx:42
 msgid "Restore sites"
 msgstr "Websites wiederherstellen"
 
-#: app/qr/index.tsx:110
+#: app/qr/index.tsx:195
+msgid "Save site"
+msgstr "Seite speichern"
+
+#: app/qr/index.tsx:214
 msgid "Scan QR code"
 msgstr "QR-Code scannen"
 
-#: app/qr/info.tsx:62
+#: app/qr/info.tsx:63
 msgid "Scan another code"
 msgstr "Scannen Sie einen anderen Code"
-
-#: app/qr/index.tsx:82
-msgid "Scan your website's 2FA QR code using your device's camera"
-msgstr "Scannen Sie den 2FA-QR-Code Ihrer Website mit der Kamera Ihres Geräts"
 
 #: src/components/SitesList.tsx:80
 msgid "Search..."
@@ -114,7 +119,7 @@ msgstr "Suche..."
 msgid "Secure the access to your stored 2FA using your device fingerprint authentication"
 msgstr "Sichern Sie den Zugriff auf Ihre gespeicherte 2FA mithilfe der Fingerabdruckauthentifizierung Ihres Geräts"
 
-#: app/qr/index.tsx:96
+#: app/qr/index.tsx:136
 msgid "The QR code can be easily recognized by simply pointing your device's camera at it"
 msgstr "Der QR-Code kann leicht erkannt werden, indem einfach die Kamera Ihres Geräts darauf gerichtet wird"
 
@@ -122,9 +127,21 @@ msgstr "Der QR-Code kann leicht erkannt werden, indem einfach die Kamera Ihres G
 msgid "To ensure that you don't lose your saved data, you can download a file of the sites and restore them at a later time"
 msgstr "Um sicherzustellen, dass Sie Ihre gespeicherten Daten nicht verlieren, können Sie eine Datei der Websites herunterladen und zu einem späteren Zeitpunkt wiederherstellen"
 
+#: app/qr/index.tsx:180
+msgid "Token"
+msgstr "Token"
+
 #: src/components/CopyToClipboard.tsx:19
 msgid "Token copied to clipboard"
 msgstr "Token in Zwischenablage kopiert"
+
+#: app/qr/index.tsx:166
+msgid "Token name"
+msgstr "Token-Name"
+
+#: app/qr/index.tsx:121
+msgid "You can either use your device's camera to scan the 2FA QR code on the site, or manually enter the provided token and a name"
+msgstr "Sie können entweder die Kamera Ihres Geräts verwenden, um den 2FA-QR-Code auf der Site zu scannen, oder das bereitgestellte Token und einen Namen manuell eingeben"
 
 #: app/settings/import.tsx:81
 msgid "{sitesProcessed, plural, one {Processed 1 site of {numberOfSites}} other {Processed # sites of {numberOfSites}}}"
