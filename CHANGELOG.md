@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.12.0](https://github.com/displaynone/shield-authenticator/compare/v1.11.1...v1.12.0) (2023-04-29)
+
+
+### Features
+
+* allow users to add tokens manually ([88ef2a5](https://github.com/displaynone/shield-authenticator/commit/88ef2a5a384b9bbaea1410b9dcce8c9ab24eb143))
+
 ## [1.11.1](https://github.com/displaynone/shield-authenticator/compare/v1.11.0...v1.11.1) (2023-04-27)
 
 
