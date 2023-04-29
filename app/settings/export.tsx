@@ -67,7 +67,9 @@ const SettingsExport: FC = () => {
       />
       <View style={styles.buttonContainer}>
         <Button mode="contained" onPress={() => downloadStringAsFile()}>
-          <Trans>Generate file</Trans>
+          <Text variant={['tertiary', 'marginless']}>
+            <Trans>Generate file</Trans>
+          </Text>
         </Button>
       </View>
     </Section>

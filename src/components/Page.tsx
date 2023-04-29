@@ -52,6 +52,7 @@ const theme: MD3Theme = {
     secondary: colors.medium,
     tertiary: colors.light,
     surfaceVariant: colors.light,
+    secondaryContainer: colors.light,
   },
   roundness: 8,
   fonts: configureFonts({
