@@ -45,6 +45,12 @@ import { LinkedinIcon } from '../icons/sites/LinkedinIcon';
 import { PaypalIcon } from '../icons/sites/Paypal';
 import { AmazonIcon } from '../icons/sites/AmazonIcon';
 import { FacebookIcon } from '../icons/sites/FacebookIcon';
+import { BillIcon } from '../icons/sites/BillIcon';
+import { CrowdinIcon } from '../icons/sites/CrowdinIcon';
+import { OpenAIIcon } from '../icons/sites/OpenAIIcon';
+import { UbuntuSSOIcon } from '../icons/sites/UbuntuSSOIcon';
+import { CourseraIcon } from '../icons/sites/CourseraIcon';
+import { PosthogIcon } from '../icons/sites/PosthogIcon';
 
 type IssuerProps = {
   issuer?: string;
@@ -55,6 +61,7 @@ type IssuerProps = {
 const IssuerIcon: FC<IssuerProps> = ({ issuer, size = 58, color }) => {
   const styles = getStyles(size);
   const getComponent = () => {
+    console.log(issuer?.toLowerCase());
     switch (issuer?.toLowerCase()) {
       case 'twitter':
         return TwitterIcon;
@@ -146,6 +153,19 @@ const IssuerIcon: FC<IssuerProps> = ({ issuer, size = 58, color }) => {
         return AmazonIcon;
       case 'facebook':
         return FacebookIcon;
+      case 'divvy':
+      case 'bill':
+        return BillIcon;
+      case 'crowdin.com':
+        return CrowdinIcon;
+      case 'openai':
+        return OpenAIIcon;
+      case 'ubuntusso':
+        return UbuntuSSOIcon;
+      case 'coursera':
+        return CourseraIcon;
+      case 'us.posthog.com':
+        return PosthogIcon;
     }
     return DefaultIcon;
   };
