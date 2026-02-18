@@ -1,13 +1,5 @@
 import { Trans } from '@lingui/macro';
-import {
-  Dispatch,
-  FC,
-  SetStateAction,
-  useCallback,
-  useEffect,
-  useRef,
-  useState,
-} from 'react';
+import { FC, useCallback, useEffect, useRef, useState } from 'react';
 import { Animated, StyleSheet, View } from 'react-native';
 import { Swipeable, TouchableOpacity } from 'react-native-gesture-handler';
 import { Button } from 'react-native-paper';
@@ -22,7 +14,6 @@ import { generateTOTP, getAlgorithm } from '../util/generateTotp';
 import CopyToClipboard from './CopyToClipboard';
 import { TickIcon } from '../icons/TickIcon';
 import { useDB } from '../providers/DatabaseProvider';
-import { useTimer30 } from '../hooks/useTimer30';
 
 type SiteInfoProps = {
   site: Site;
@@ -40,16 +31,19 @@ const SiteInfo: FC<SiteInfoProps> = ({ site, timer, visible, deleteSite }) => {
   const period = site.period || DEFAULT_TOTP_PERIOD;
 
   const regenerateToken = useCallback(() => {
-    generateTOTP({
+    const generatedToken = generateTOTP({
       algorithm: getAlgorithm(site.algorithm),
       digits: site.digits,
       period,
       secret: site.secret,
-    }).then(t => {
-      setToken(t);
-      setLoading(false);
     });
+    setToken(generatedToken);
+    setLoading(false);
   }, [period, site.algorithm, site.digits, site.secret]);
+
+  useEffect(() => {
+    regenerateToken();
+  }, [regenerateToken]);
 
   useEffect(() => {
     if (timer >= 0 && visible) {
@@ -57,7 +51,7 @@ const SiteInfo: FC<SiteInfoProps> = ({ site, timer, visible, deleteSite }) => {
       setLoading(true);
       regenerateToken();
     }
-  }, [timer, regenerateToken, site.label, visible]);
+  }, [timer, regenerateToken, visible]);
 
   const cancelSwip = () => {
     swipeableRef.current?.close();
@@ -109,13 +103,23 @@ const SiteInfo: FC<SiteInfoProps> = ({ site, timer, visible, deleteSite }) => {
     );
   };
 
+  const getIssuer = () => {
+    if (site.issuer) {
+      return site.issuer;
+    }
+    if (site.label.toLowerCase().includes('ubuntusso')) {
+      return 'ubuntusso';
+    }
+    return site.label.toLowerCase();
+  };
+
   return (
     <View style={styles.wrapper}>
       <Swipeable renderRightActions={renderRightActions} ref={swipeableRef}>
         <View style={styles.card}>
           <View style={styles.main}>
             <View style={styles.icon}>
-              <IssuerIcon issuer={site.issuer} />
+              <IssuerIcon issuer={getIssuer()} />
             </View>
             <View style={styles.text}>
               <Text size="titleSmall" variant={['marginless', 'primary']}>

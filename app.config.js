@@ -1,8 +1,11 @@
 import 'dotenv/config';
 
+const appVariant = process.env.APP_VARIANT ?? 'production';
+const isDev = appVariant === 'development';
+
 module.exports = {
   expo: {
-    name: 'Shield Authenticator',
+    name: isDev ? 'Shield Authenticator-dev' : 'Shield Authenticator',
     slug: 'timepass',
     version: '1.12.0',
     orientation: 'portrait',
@@ -21,10 +24,12 @@ module.exports = {
         foregroundImage: './assets/logo.png',
         backgroundColor: '#FFFFFF',
       },
-      package: 'com.displaynone.timepass',
+      package: isDev
+        ? 'com.displaynone.timepass.dev'
+        : 'com.displaynone.timepass',
       versionCode: 1120000,
     },
-    scheme: 'shield-authenticator',
+    scheme: isDev ? 'shield-authenticator-dev' : 'shield-authenticator',
     plugins: [
       'expo-localization',
       '@morrowdigital/watermelondb-expo-plugin',

@@ -14,6 +14,7 @@ import { generateTOTP, getAlgorithm } from '../../src/util/generateTotp';
 import { Button } from 'react-native-paper';
 import { Trans } from '@lingui/macro';
 import CopyToClipboard from '../../src/components/CopyToClipboard';
+import { useTimer30 } from '../../src/hooks/useTimer30';
 
 const QRInfo: FC = () => {
   const params = useSearchParams() as unknown as OtpRecord;
@@ -23,21 +24,27 @@ const QRInfo: FC = () => {
   const [token, setToken] = useState('');
 
   const period = site?.period || DEFAULT_TOTP_PERIOD;
+  const timer30 = useTimer30(period);
 
   useEffect(() => {
     newSite(params).then(s => setSite(s));
   }, [newSite, params]);
 
+  useEffect(() => {
+    if (!site) return;
+
+    const generatedToken = generateTOTP({
+      algorithm: getAlgorithm(site.algorithm),
+      digits: site.digits,
+      period,
+      secret: site.secret,
+    });
+    setToken(generatedToken);
+  }, [period, site, timer30]);
+
   if (!site) {
     return <ActivityIndicator />;
   }
-
-  generateTOTP({
-    algorithm: getAlgorithm(site.algorithm),
-    digits: site.digits,
-    period,
-    secret: site.secret,
-  }).then(t => setToken(t));
 
   return (
     <Container variant={['fullscreen', 'filled']}>

@@ -9,6 +9,7 @@
   "main": "index.js",
   "scripts": {
     "android": "expo run:android",
+    "android:dev": "APP_VARIANT=development expo run:android",
     "format": "prettier --write '**/*.js'",
     "test": "jest",
     "lingui:extract": "lingui extract --clean",

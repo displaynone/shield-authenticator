@@ -1,12 +1,4 @@
-import React, {
-  Dispatch,
-  FC,
-  SetStateAction,
-  memo,
-  useCallback,
-  useEffect,
-  useState,
-} from 'react';
+import React, { FC, memo, useCallback, useEffect, useState } from 'react';
 
 import { Trans, t } from '@lingui/macro';
 import { FlashList } from '@shopify/flash-list';
@@ -109,7 +101,7 @@ const SitesList: FC<SitesListProps> = ({ sites, deleteSite }) => {
           }}
           onViewableItemsChanged={onViewableItemsChanged}
           estimatedItemSize={90}
-          extraData={{ timer30 }}
+          extraData={{ timer30, visibleItems }}
         />
       </View>
     </>
