@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.13.0](https://github.com/displaynone/shield-authenticator/compare/v1.12.0...v1.13.0) (2026-02-18)
+
+
+### Features
+
+* new sites ([a8dd109](https://github.com/displaynone/shield-authenticator/commit/a8dd10941729b0a4cd810bd87d8f8ff594c6c26a))
+
+
+### Bug Fixes
+
+* remove f*** crowdin file it was pushed directly ([c18faf6](https://github.com/displaynone/shield-authenticator/commit/c18faf62d2184809bb20aba0620587404c187c4c))
+
 ## [1.12.0](https://github.com/displaynone/shield-authenticator/compare/v1.11.1...v1.12.0) (2023-04-29)
 
 
